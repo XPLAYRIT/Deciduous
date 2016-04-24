@@ -83,31 +83,24 @@ function deciduous_p_theme_setup() {
     // Load Action Hooks
     require_once ( DECIDUOUS_LIB . '/extensions/actions.php' );
     
-    // Need a little help from our helper functions
     require_once ( DECIDUOUS_LIB . '/extensions/helpers.php' );
     
-    // Load deprecated functions
     require_once ( DECIDUOUS_LIB . '/legacy/deprecated.php' );
 
-    // Load custom header extensions
     require_once ( DECIDUOUS_LIB . '/extensions/header-extensions.php' );
 
     require_once ( DECIDUOUS_LIB . '/extensions/post-header-extensions.php' );
-     // Load custom content filters
+
     require_once ( DECIDUOUS_LIB . '/extensions/post-content-extensions.php' );
     
     require_once ( DECIDUOUS_LIB . '/extensions/post-footer-extensions.php' );
 
-    // Load custom Comments filters
     require_once ( DECIDUOUS_LIB . '/extensions/post-comments-extensions.php' );
 
-    // Register Sidebars and load Widget Areas on action hooks
     require_once ( DECIDUOUS_LIB . '/extensions/widget-area-extensions.php' );
 
-    // Add Dynamic Contextual Semantic Classes
     require_once ( DECIDUOUS_LIB . '/extensions/dynamic-classes.php' );
 
-    // Load Theme Customizer support
     require_once ( DECIDUOUS_LIB . '/extensions/customizer.php' );
     
     // Adds filters for the description/meta content in archive templates
