@@ -20,10 +20,9 @@
 				<?php if (  $deciduous_header_image = get_header_image() ) : ?>
 				<?php
 					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
+					 * Filter the default Deciduous custom header sizes attribute.
 					 *
-					 * @since Twenty Sixteen 1.0
-					 *
+					 * @todo recalc how the $custom_header_sizes are sized since this came from 2016theme
 					 * @param string $custom_header_sizes sizes attribute
 					 * for Custom Header. Default '(max-width: 709px) 85vw,
 					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
