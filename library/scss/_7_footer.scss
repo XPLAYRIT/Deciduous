@@ -1,0 +1,31 @@
+/**
+ * 7.0 Footer
+ * ----------------------------------------------------------------------------
+ */
+.site-footer {
+	background: $body-background-darkened;
+}
+
+#colophon {
+	background: #222;
+	color: $body-background;
+}
+
+#siteinfo{
+	
+	& p{
+		@include adjust-font-size-to(14px);
+    	padding-top: 2.143em;
+		padding-bottom: 3.429em;
+		margin-bottom: 0;
+	}
+
+	& a {
+    	color: $link-color;
+	}
+
+	& a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+}

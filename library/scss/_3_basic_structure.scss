@@ -1,0 +1,23 @@
+/**
+ * 3.0 Basic Structure
+ * ----------------------------------------------------------------------------
+ */
+
+.site-wrapper {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.branding,
+.menu,
+.site-main,
+#subsidiary,
+#siteinfo {
+	@include container(64em);
+	@include gutters(2em); // percentages make Safari drop the sidebar below content on the default layout
+}
+
+.site-main {
+	padding-bottom: rhythm(2.5,16px);
+	padding-top: rhythm(3,16px)
+}

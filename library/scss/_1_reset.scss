@@ -1,0 +1,468 @@
+/**
+ * 1.0 Reset
+ *
+ * Modified from Normalize.css to provide cross-browser consistency and a smart
+ * default styling of HTML elements.
+ *
+ * @see http://git.io/normalize
+ * ----------------------------------------------------------------------------
+ */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;	
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+@include establish-baseline;
+
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: $body-font;
+}
+
+body {
+	background: $body-background;
+	color: $body-color;
+	margin: 0;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+
+a:visited {
+	color: $link-color-darkened;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:active,
+a:hover {
+	color: $link-color;
+	outline: 0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: $header-font;
+	line-height: 1.3em;
+}
+
+h1 {
+	font-size: 2.125em;//34px;
+	margin: 0.765em 0;//26px
+}
+
+h2 {
+	font-size: 1.6875em;;//27px
+	margin: 1.148em 0 ;//30.063em
+}
+
+h3 {
+	font-size: 1.375em;//22px
+	margin: 0.909em 0;//20px
+	font-style: italic;
+}
+
+h4 {
+	font-size: 1.125em;//18px
+	margin: 1.333em 0;//24px
+	text-transform: uppercase;
+}
+
+h5 {
+	font-size: 1.125em;//18px
+	margin: 1.333em 0;//24px
+}
+
+h6 {
+	font-size: 1em;//16px
+	margin: 1.6em 0;//25px
+}
+
+.h-top{ /* for posts that start with a heading */
+	margin-top: 0; 
+}
+
+address {
+	font-style: italic;
+	margin: 0 0 1.5em;
+}
+
+abbr[title] {
+	border-bottom: 0.063em dotted #333;
+	cursor: help;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 14px;//setting explicit size in px
+	line-height: 1.714em;
+ 	@include hyphens(none);
+}
+
+@-moz-document url-prefix() { 
+  code {
+    line-height: 1.45em;
+  }
+}
+
+
+pre {
+	background: #f5f5f5;
+	color: #666;
+	font-family: monospace;
+	margin: 1.714em 0;
+	overflow: auto;
+	padding: 1.714em;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+blockquote,
+q {
+	@include hyphens(none);
+	quotes: none;
+	@include adjust-font-size-to(18px,1.005);
+	font-style: italic;
+	color: $body-color-lightened;
+	margin: 1.333em 40px;
+}
+
+blockquote p {
+	margin-bottom: 1.333em;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+blockquote blockquote {
+	margin-right: 0;
+}
+
+blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 1.250em;
+	text-align: right;
+	width: 33%;
+}
+blockquote.right {
+	float: right;
+	margin-left: 1.250em;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
+
+blockquote cite,
+blockquote small {
+	@include adjust-font-size-to(14px);
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+blockquote em,
+blockquote i {
+	font-style: normal;
+
+}
+
+blockquote strong,
+blockquote b {
+	font-weight: 400;
+}
+
+small {
+	font-size: smaller;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1.5ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+dl {
+	margin: 0 1.5em; 
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 1.5em;
+}
+
+menu,
+ol,
+ul {
+	margin: 1.5em 0;
+	padding: 0 0 0 2.5em;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+
+nav ul,
+nav ol {
+	list-style: none;
+	list-style-image: none;
+}
+
+li > ul,
+li > ol {
+	margin: 0;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	vertical-align: middle;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+}
+
+form {
+	margin: 0;
+}
+
+fieldset {
+	margin: 0 0.125em;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+	white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	margin: 0;
+	max-width: 100%;
+	vertical-align: baseline;
+}
+
+button,
+input {
+	border: 0.063em solid $border-color;
+	line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+	@include border-radius(2px, 2px);
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	padding-right: 0.125em; /* Don't cut off the webkit search cancel button */
+	width: 16.875em;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	border: 0.063em solid $border-color;
+	overflow: auto;
+	vertical-align: top;
+}
+
+.table_wrap,
+.calendar_wrap {
+	overflow-x: auto;
+}
+.table_wrap {
+	border: 0.063em solid $border-color;
+	margin: 0 0 1.25em;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	@include adjust-font-size-to(14px);
+	width: 99%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+	padding: .7em 1.25em;
+}
+
+caption {
+	margin: 1.25em 0;
+}
+
+th {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+td {
+	border-top: 0.063em solid $border-color;
+}
+
+del {
+	color:$body-color-lightened;
+}
+
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	background-color: $border-color;
+	border: 0;
+	height: 0.063em;
+	margin: 0 0 1.5em;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: $selection-color;
+    background: $selection-background;
+}
+
+::selection {
+    color: $selection-color;
+    background: $selection-background;
+}

@@ -1,0 +1,532 @@
+/**
+ * 5.0 Content
+ * ----------------------------------------------------------------------------
+ */
+.page-title {
+	@include adjust-font-size-to(18px);
+    padding: 0 0 2.750em 0;
+	margin: 0;
+	
+	.attachment & {
+    	font-style: italic;
+	}
+	
+	& a {
+    	color: $body-color-lightened;
+    	text-decoration: none;
+	}
+		
+	& a:active, & a:hover {
+    	color: $link-hover;
+	}
+
+	& span {
+    	font-style: italic;
+	}
+
+	& .meta-nav {
+    	font-style: normal;
+	}
+}
+
+.archive-meta {
+	@include adjust-font-size-to(14px);
+	position: relative;
+	top: -2.750em;
+}
+
+.post-thumb-featured img {
+	padding-bottom: 1.5em;
+}
+
+.hentry {
+    padding: 0 0 1.5em 0;
+	.single & {
+    	padding: 0;
+	}
+}
+
+.home .site-content .sticky {
+    border: 0.063em solid $border-color;
+    margin: -0.126em 0 4.4em 0;
+    padding: 1.6em 1.2em 0;
+}
+
+/**
+ * 5.1 Entry Header
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-title {
+    font-family: $header-font;
+    @include adjust-font-size-to(26px, 1.2);
+    font-weight: bold;
+    padding: 0 0 .3em 0;
+	margin: 0;
+	word-wrap: break-word;
+
+	& a {
+    	color: $body-color;
+    	text-decoration: none;
+	}
+
+	& a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+}
+
+/**
+ * 5.2 Entry Meta
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-meta {
+    color: $body-color-lightened;
+    @include adjust-font-size-to(14px);
+	font-style:italic;
+	
+	& a {
+		color: $body-color-lightened;
+    	text-decoration: none;
+	}
+	& a:active, 
+	& a:hover {
+    	color: $link-hover;
+	}
+
+	& abbr {
+   		border: none;
+    	cursor: text;
+	}
+}
+
+/**
+ * 5.3 Entry Content
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-content {
+	@include hyphens(auto);
+	word-wrap: break-word;
+    padding: rhythm(.75) 0 0 0;
+	& table {
+    	margin-left: 0.063em;
+	}
+
+	& embed {
+    	margin:0 0 1.375em 0;
+	}
+}
+
+.page-link {
+	clear: both;
+	@include adjust-font-size-to(16px);
+	font-weight: bold;
+    margin: 0 0 1.5em 0;
+    padding: 1.5em 0 0 0;
+	word-spacing: 0.5em;
+
+	& a,
+	&> span {
+		border: 0.063em solid $border-color;
+		color: $body-color-lightened;
+		font-weight: normal;
+		padding: 0.313em 0.625em;
+		text-decoration: none;
+	}
+
+	& a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+}
+
+.edit-link {
+	clear:both;
+}
+/**
+ * 5.4 Entry Utility
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-utility {
+	clear: both;
+    color: $body-color-lightened;
+    @include adjust-font-size-to(14px);
+    margin: 0 0 3em 0;
+
+	& a {
+   		color: $body-color-lightened;
+    	font-style: italic;
+    	text-decoration: none;
+	}
+
+	&a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+}
+
+/**
+ * 5.5 Galleries
+ * ----------------------------------------------------------------------------
+ */
+
+.gallery {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin: 0 auto;
+    padding: 0 0 1.5em 0;
+}
+
+.gallery-row {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin: 0;
+}
+
+.gallery-item {
+	width:33%;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 2em;
+	text-align: center;
+	list-style: none;
+}
+@include breakpoint(small) {
+	.gallery-item {
+		width:100%;
+	}
+}
+
+.gallery-icon {
+	margin: 0 0.313em .5em;
+}
+
+.site-content .gallery img {
+    border: 0.063em solid $border-color;
+	margin: 0;
+	padding: 0.375em;
+}
+
+.gallery-item img, .gallery-item img.thumbnail {
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	padding: 0.375em 0.375em 0;
+}
+
+
+/**
+ * 5.6 Attachments
+ * ----------------------------------------------------------------------------
+ */
+
+
+
+
+
+
+/**
+ * 5.7 Post/Paging Navigation
+ * ----------------------------------------------------------------------------
+ */
+
+.navigation {
+    color: $body-color-lightened;
+    @include adjust-font-size-to(13px);
+    margin: 0px 0 1.5em 0;
+    overflow: hidden;
+
+	& a {
+    	color: $body-color-lightened;
+    	font-style: italic;
+    	text-decoration: none;
+	}
+
+	& a:active,
+	& .navigation a:hover {
+    	color: $link-hover;
+	}
+
+	& .meta-nav {
+    	font-style: normal;
+	}
+}
+
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.nav-next {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+
+#nav-before,
+#nav-after {
+	width: 100%;
+}
+
+#nav-before {
+    display: none;
+}
+
+.paged #nav-before {
+    display: block;
+    padding: 0 0 3em 0;
+}
+
+/**
+ * 5.8 Author Bio
+ * ----------------------------------------------------------------------------
+ */
+
+#author-info {
+    margin: 0 0 3em 0;
+    overflow:hidden;
+	
+	& h2 {
+		display: inline-block;
+	}
+	
+	& .avatar {
+    	float: left;
+   	 margin: .3em 1em 0 0;
+	}
+}
+
+/**
+ * 5.9 Comments
+ * ----------------------------------------------------------------------------
+ */
+
+#comments {
+	clear: both;
+    padding: 2.2em 0 0 0;
+	word-wrap: break-word;
+
+	& h3 {
+    	font-family: $header-font;
+    	@include adjust-font-size-to(15px);
+    	font-weight: bold;
+		margin:0;
+    	padding:0 0 1.9em 0;
+	}
+}
+
+#comments-list {
+    border-bottom: none;
+    margin: 0 0 1.4em;
+	padding-left: 0;
+	list-style: none;
+	
+	& h3 {
+		padding-bottom: 0;
+	}
+
+	& ul,
+	& ol {
+    	padding-bottom: 1.125em;
+	}
+
+	& .children {
+		list-style: none;
+		padding-left: 0;
+		padding-bottom: 0.25em;
+	}
+
+	& ul ul,
+	& ol ol,
+	& ul ul ul,
+	& ol ol ol {
+    	padding-bottom: 0;
+	}
+	
+	& .comment {
+    	background: #fafafa;
+    	padding: .6em 1.5em 0 1.5em;
+    	position: relative;
+	}
+
+	& li.alt {
+    	background: $body-background;
+	}
+
+	& li.bypostauthor {
+    	background: #e9eae2;
+	}
+
+	& ul .comment {
+   	 margin: 0 0 1.125em 0;
+	}
+
+	& li .avatar {
+    	position: absolute;
+    	top: 1.375em;
+    	left: 1.5em;
+    	width: 2.500em;
+   	 	height: 2.500em;
+	}
+	
+	& .comment-author {
+    	font-weight: bold;
+    	padding: .7em 0 0 3.125em;
+	}
+
+	& .comment-meta {
+   	 	color: $body-color-lightened;
+    	@include adjust-font-size-to(11px);
+    	padding: 0 0 2em 4.5em;
+	}
+
+	& .comment-meta a {
+    	color: $body-color-lightened;
+    	font-style: italic;
+    	text-decoration: none;
+	}
+
+	& .comment-meta a:active,
+	& .comment-meta a:hover {
+    	color: $link-hover;
+	}
+}
+.comment-replylink {
+    padding-bottom:1.6em;
+	
+}
+
+.comment-reply-link {
+    @include adjust-font-size-to(11px);
+    text-align: right;
+
+	& a {
+    	color: $body-color-lightened;
+    	font-style: italic;
+    	text-decoration: none;
+	}
+
+	& a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+}
+
+.comment-navigation {
+    font-weight: bold;
+	padding: 1.125em 0 1.5em;
+    margin-right: 0.5em;
+	
+	& a {
+    	border: 0.063em solid $border-color;
+   		color: $body-color-lightened;
+    	font-weight: normal;
+    	padding: 0.5em 0.75em;
+    	text-decoration: none;
+	}
+
+	& a:active,
+	& a:hover {
+    	color: $link-hover;
+	}
+
+	& a,
+	& span {
+    	margin-right: 0.5em;
+	}
+}
+
+#trackbacks-list .comment-content {
+    position: absolute;
+    left: -10000px;
+}
+
+#respond {
+    background: $body-background;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    padding: 1.5em 0 0 0;
+    position: relative;
+
+	#comments-list & {
+    	border-bottom: 0.063em solid $border-color;
+    	margin: 0 0 1.125em 0;
+    	padding: 1.125em 1.5em;
+	}
+
+	#comments-list ul & {
+   		border: 0.063em solid $border-color;
+    	margin:0;
+	}
+	& .required {
+	    color: $link-color-current;
+	    font-weight: bold;
+	}
+}
+
+#cancel-comment-reply {
+    @include adjust-font-size-to(11px);
+    position: absolute;
+    top: 1.125em;
+    right: 1.5em;
+
+	& a {
+    	color:$body-color-lightened;
+	}
+}
+
+.form-section {
+	& label {
+		@include adjust-font-size-to(14px);
+	}
+
+	& input {
+    	margin: 0 0 1.125em 0;
+    	width: 98%;
+	}
+
+	& textarea {
+    	width:99%;
+	}
+}
+
+#form-allowed-tags p {
+    color: $body-color-lightened;
+    @include adjust-font-size-to(14px, 7/8);
+    margin: 0;  
+    padding: 0.625em 0;  
+	font-style: italic;
+}
+
+.form-submit {
+    padding: 1.125em 0 0 0;
+    text-align: right;
+}
+
+.subscribe-to-comments {
+    color: $body-color-lightened;
+    float: left;
+    @include adjust-font-size-to(11px);
+    margin: 0;
+    padding: 1.125em 0 0 0;
+}
+
+.solo-subscribe-to-comments {
+    color: $body-color-lightened;
+    @include adjust-font-size-to(11px);
+    padding: 1.125em 0 0 0;
+}
+
+.comment_license {
+    color: $body-color-lightened;
+    clear: both;
+    @include adjust-font-size-to(11px);
+    margin: 0;
+    padding: 1.125em 0 0 0;
+}
