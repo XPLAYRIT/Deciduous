@@ -4,10 +4,10 @@
  *
  * …
  * 
- * @package Thematic
+ * @package Deciduous
  * @subpackage Templates
  */
     
     // calls the search form
-	thematic_search_form();
+	deciduous_search_form();
 ?>

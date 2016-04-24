@@ -2,67 +2,84 @@
 /**
  * Index Template
  *
- * This file is required by WordPress to recoginze Thematic as a valid theme.
+ * This file is required by WordPress to recoginze deciduous as a valid theme.
  * It is also the default template WordPress will use to display your web site,
  * when no other applicable templates are present in this theme's root directory
  * that apply to the query made to the site.
  *
- * WP Codex Reference: http://codex.wordpress.org/Template_Hierarchy
+ * @link http://codex.wordpress.org/Template_Hierarchy Codex: Template Hierarchy
  *
- * @package Thematic
+ * @package Deciduous
  * @subpackage Templates
  */
 
-	// calling the header.php
+
 	get_header();
+?>
 
-	// action hook for placing content above #container
-	thematic_abovecontainer();
+			<?php
+				// Load action hook: deciduous_a_before_container
+				deciduous_do_before_container();
+			?>
 
-	// filter for manipulating the output of the #container opening element
-	echo apply_filters( 'thematic_open_id_container', '<div id="container" class="content-wrapper">' . "\n\n" );
+			<div id="container" class="content-wrapper">
+	
+				<?php
+					// Load action: deciduous_a_before_content
+					deciduous_do_before_content();
+				?>
 
-	// action hook for placing content above #content
-	thematic_abovecontent();
+				<div id="content" class="site-content" role="main">
+			
+					<?php
+						if ( current_theme_supports( 'deciduous_s_nav_before_content' ) ) {
+							locate_template( array( 'template-parts/navigation/nav-content-before.php' ), true );
+						}
+	
+						/**
+						 * Load action hook: deciduous_a_before_x_loop where x = the type of template hierarchy view
+						 *
+						 * The result may be: deciduous_a_before_blog_loop, deciduous_a_before_search_loop, 
+						 * deciduous_a_before_404_loop
+						 */
+						deciduous_do_before_x_loop();
 
-	// filter for manipulating the element that wraps the content
-	echo apply_filters( 'thematic_open_id_content', '<div id="content" class="site-content" role="main">' . "\n\n" );
+						locate_template( array( 'template-parts/content/loop.php' ) ,true );
 
-	// create the navigation above the content
-	thematic_navigation_above();
+						/**
+						 * Load action hook: deciduous_a_after_x_loop where x = the type of template hierarchy view
+						 *
+						 * The result may be: deciduous_a_after_blog_loop, deciduous_a_after_search_loop, 
+						 * deciduous_a_after_404_loop
+						 */
+						deciduous_do_after_x_loop();
 
-	// calling the widget area 'index-top'
-	get_sidebar('index-top');
+						if ( current_theme_supports( 'deciduous_s_nav_after_content' ) ) {
+							locate_template( array( 'template-parts/navigation/nav-content-after.php' ), true );
+						}
+					?>
+	
+				</div><!-- #content -->
+	
+				<?php
+					// Load action hook: deciduous_a_after_content
+					deciduous_do_after_content();
+				?>
 
-	// action hook for placing content above the index loop
-	thematic_above_indexloop();
+			</div><!-- #container -->
 
-	// action hook creating the index loop
-	thematic_indexloop();
+			<?php
+				// Load action hook: deciduous_a_after_container
+				deciduous_do_after_container();
 
-	// action hook for placing content below the index loop
-	thematic_below_indexloop();
+				/**
+				 * Show Main Asides sidebars only if the layout calls for them to be displayed 
+				 * for example: full-width layout should not have main asides
+				 */
+				if ( deciduous_main_asides_switch() ) {
+						deciduous_get_sidebar('primary');
+    					deciduous_get_sidebar('secondary');
+    			}
 
-	// calling the widget area 'index-bottom'
-	get_sidebar('index-bottom');
-
-	// create the navigation below the content
-	thematic_navigation_below();
-
-	// filter for manipulating the output of the #content closing element
-	echo apply_filters( 'thematic_close_id_content', '</div><!-- #content -->' . "\n\n" );
-
-	// action hook for placing content below #content
-	thematic_belowcontent();
-
-	// filter for manipulating the output of the #container closing element
-	echo apply_filters( 'thematic_close_id_container', '</div><!-- #container -->' . "\n\n" );
-
-	// action hook for placing content below #container
-	thematic_belowcontainer();
-
-	// calling the standard sidebar
-	thematic_sidebar();
-
-	// calling footer.php
-	get_footer();
+				get_footer();
+			?>
