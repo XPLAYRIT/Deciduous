@@ -16,9 +16,9 @@
 			$( '.tagline' ).text( to );
 		} );
 	} );
-	wp.customize('thematic_theme_opt[footer_txt]',function( value ) {
+	wp.customize('deciduous_theme_opt[footer_txt]',function( value ) {
         value.bind(function(to) {
-            $('#siteinfo').html(to);
+            $('#siteinfo p').html(to);
         });
     });
 } )( jQuery );
