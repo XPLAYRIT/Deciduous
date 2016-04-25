@@ -4,66 +4,76 @@
  *
  * …
  *
- * @package Thematic
+ * @package Deciduous
  * @subpackage Templates
  */
 
-    // calling the header.php
-    get_header();
 
-    // action hook for placing content above #container
-    thematic_abovecontainer();
+	get_header();
+?>
 
-	// filter for manipulating the output of the #container opening element
-	echo apply_filters( 'thematic_open_id_container', '<div id="container" class="content-wrapper">' . "\n\n" );
+			<?php
+				// Load action hook: deciduous_a_before_container
+				deciduous_do_before_container();
+			?>
 
-	// action hook for placing content above #content
-	thematic_abovecontent();
+			<div id="container" class="content-wrapper">
+	
+				<?php
+					// Load action hook: deciduous_a_before_content
+					deciduous_do_before_content();
+				?>
 
-	// filter for manipulating the element that wraps the content
-	echo apply_filters( 'thematic_open_id_content', '<div id="content" class="site-content" role="main">' . "\n\n" );
+				<div id="content" class="site-content" role="main">
 
-	// start the loop
-	while ( have_posts() ) : the_post();
+					<?php 
+						while ( have_posts() ) : the_post();
+							if ( current_theme_supports( 'deciduous_s_nav_before_content' ) ) {
+								locate_template( array( 'template-parts/navigation/nav-content-before.php' ), true );
+							}
+		
+							if ( is_attachment() ) {
+								locate_template( array( 'template-parts/content/content-attachment.php') , true );
+							} else {
+								locate_template( array( 'template-parts/content/content-single.php') , true  );
+							}
+		
+							if ( current_theme_supports( 'deciduous_s_nav_after_content' ) ) {
+								locate_template( array( 'template-parts/navigation/nav-content-after.php' ) , true );
+							}
 
-		// create the navigation above the content
-		thematic_navigation_above();
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) {
+								comments_template( '', true );
+							}
+							
+						// end the loop
+						endwhile;
+					?>
+					
+					<?php
+						// calling the widget area 'single-bottom'
+					?>
 
-		// calling the widget area 'single-top'
-		get_sidebar('single-top');
+				</div><!-- #content -->
 
-		// action hook creating the single post
-		thematic_singlepost();
+				<?php
+					// Load action hook: deciduous_a_after_content
+					deciduous_do_after_content();
+				?>
 
-		// calling the widget area 'single-insert'
-		get_sidebar('single-insert');
+			</div><!-- #container -->
+			
+			<?php
+    			// Load action hook: deciduous_a_after_container
+    			deciduous_do_after_container();
 
-		// create the navigation below the content
-		thematic_navigation_below();
+				// Show Main Asides sidebars only if the layout calls for them to be displayed 
+				// for example: full-width layout should not have main asides 
+				if ( deciduous_main_asides_switch() ) {
+						deciduous_get_sidebar('primary');
+    					deciduous_get_sidebar('secondary');
+    			}
 
-		// action hook for calling the comments_template
-		thematic_comments_template();
-
-	// end the loop
-	endwhile;
-
-	// calling the widget area 'single-bottom'
-	get_sidebar('single-bottom');
-
-	// filter for manipulating the output of the #content closing element
-	echo apply_filters( 'thematic_close_id_content', '</div><!-- #content -->' . "\n\n" );
-
-	// action hook for placing content below #content
-	thematic_belowcontent();
-
-	// filter for manipulating the output of the #container closing element
-	echo apply_filters( 'thematic_close_id_container', '</div><!-- #container -->' . "\n\n" );
-
-    // action hook for placing content below #container
-    thematic_belowcontainer();
-
-    // calling the standard sidebar
-    thematic_sidebar();
-
-    // calling footer.php
-    get_footer();
+    			get_footer();
+    		?>

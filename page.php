@@ -4,85 +4,58 @@
  *
  * …
  *
- * @package Thematic
+ * @package Deciduous
  * @subpackage Templates
  */
 
-    // calling the header.php
+  
     get_header();
-
-    // action hook for placing content above #container
-    thematic_abovecontainer();
-
-	// filter for manipulating the output of the #container opening element
-	echo apply_filters( 'thematic_open_id_container', '<div id="container" class="content-wrapper">' . "\n\n" );
-
-	// action hook for placing content above #content
-	thematic_abovecontent();
-
-	// filter for manipulating the element that wraps the content
-	echo apply_filters( 'thematic_open_id_content', '<div id="content" class="site-content" role="main">' . "\n" );
-
-	// calling the widget area 'page-top'
-	get_sidebar('page-top');
-
-	// start the loop
-	while ( have_posts() ) : the_post();
-
-		// action hook for placing content above #post
-		thematic_abovepost();
-
-		?>
-
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+?>
 
 			<?php
-				// creating the post header
-				thematic_postheader();
+				// Load action hook: deciduous_a_before_container
+    			deciduous_do_before_container();
 			?>
 
-				<div class="entry-content">
-
+			<div id="container" class="content-wrapper">
+	
 				<?php
-					the_content();
-
-					wp_link_pages( "\t\t\t\t\t<nav class='page-link'>" . __( 'Pages: ', 'thematic' ), "</nav>\n", 'number' );
-
-					edit_post_link( __( 'Edit', 'thematic' ), "\n\t\t\t\t\t\t" . '<span class="edit-link">' , '</span>' . "\n" );
+					// Load action: deciduous_a_before_content
+					deciduous_do_before_content();
 				?>
 
-				</div><!-- .entry-content -->
+				<div id="content" class="site-content" role="main">
 
-			</article><!-- #post -->
+				<?php
+					/**
+					 * Load the content-page template which will load 
+					 * actions: deciduous_a_before_post deciduous_a_after_post
+					 * as well as the comments template
+					 */
+					locate_template( array( 'template-parts/content/content-page.php'), true );
+				?>
 
-		<?php
+				</div><!-- #content -->
+				
+				<?php
+					// Load action hook: deciduous_a_after_content
+					deciduous_do_after_content();
+				?>
 
-		// action hook for inserting content below #post
-		thematic_belowpost();
+			</div><!-- #container -->
+			
+			<?php
+				// Load action hook: deciduous_a_after_container
+   				deciduous_do_after_container();
 
-		// action hook for calling the comments_template
-		thematic_comments_template();
-
-	// end loop
-	endwhile;
-
-	// calling the widget area 'page-bottom'
-	get_sidebar( 'page-bottom' );
-
-	// filter for manipulating the output of the #content closing element
-	echo apply_filters( 'thematic_close_id_content', '</div><!-- #content -->' . "\n\n" );
-
-	// action hook for placing content below #content
-	thematic_belowcontent();
-
-	// filter for manipulating the output of the #container closing element
-	echo apply_filters( 'thematic_close_id_container', '</div><!-- #container -->' . "\n\n" );
-
-    // action hook for placing content below #container
-    thematic_belowcontainer();
-
-    // calling the standard sidebar
-    thematic_sidebar();
-
-    // calling footer.php
-    get_footer();
+				/**
+				 * Show Main Asides sidebars only if the layout calls for them to be displayed 
+				 * for example: full-width layout should not have main asides
+				 */
+				if ( deciduous_main_asides_switch() ) {
+						deciduous_get_sidebar('primary');
+    					deciduous_get_sidebar('secondary');
+    			}
+			
+   				get_footer();
+			?>

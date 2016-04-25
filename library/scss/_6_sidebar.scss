@@ -1,0 +1,185 @@
+/**
+ * 6.0 Sidebar
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 6.1 Widgets
+ * ----------------------------------------------------------------------------
+ */
+
+.aside{
+    @include adjust-font-size-to(14px);
+	word-wrap: break-word;
+}
+
+.aside p,
+.aside ul,
+.aside ol,
+.aside dd,
+.aside pre {
+    margin-bottom: 1.125em;
+}
+
+.aside pre,
+.aside code {
+    @include adjust-font-size-to(12px);
+    line-height: 1.125em;
+}
+
+.aside .current-menu-item a,
+.aside .current_page_item a {
+    color: $link-color;
+}
+
+.aside .current-menu-item .menu-item a,
+.aside .current_page_item .menu-item a {
+    color: $body-color-lightened;
+}
+
+.aside .current-menu-item .menu-item a:hover,
+.aside .current-menu-item .menu-item a:active,
+.aside .current_page_item .menu-item a:hover,
+.aside .current_page_item .menu-item a:active {
+    color: $link-hover;
+}
+
+.aside {
+    color: $body-color;
+}
+
+.aside a {
+    color: $body-color;
+}
+
+.aside a:active,
+.aside a:hover {
+    color: $link-hover;
+}
+
+.aside caption {
+    @include adjust-font-size-to(11px);
+    font-family: $header-font;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.widget ul {
+    list-style: disc;
+    margin: 0 0 1.7em;
+	padding: 0 1.250em;
+}
+
+.widget ul ul {
+	margin-left: 1.250em;
+	margin-bottom: 0;
+}
+
+.widgettitle:first-child {
+	margin-top: .2em;
+}
+
+.widgettitle {
+    @include adjust-font-size-to(18px);
+    font-style: italic;
+	font-family: $body-font;
+	font-weight: normal;
+ 	margin-bottom: 0.25em;
+	margin-top: 0.8em;
+}
+
+.widgettitle a {
+    text-decoration: none;
+}
+
+.aside ul ul li {
+    padding: 0.063em 0;
+}
+
+.aside ul ul ul {
+    margin-bottom:0;
+}
+
+.aside form,
+.aside table {
+
+}
+
+.aside  #searchform{
+    margin-bottom: 2.1em;
+    margin-top: 1em;
+}
+
+.aside table {
+    border:none;
+}
+
+.aside thead {
+    border: 0.063em solid $border-color;
+}
+
+.aside tbody {
+    border: 0.063em solid $border-color;
+}
+
+.aside th, .aside td {
+    border-right: 0.063em solid $border-color;
+    padding: .25em .8em;
+}
+
+.aside tfoot tr {
+    border: none;
+}
+
+.aside tfoot td {
+    border-color: transparent;
+}
+
+.aside #searchsubmit {
+	display: none;	
+}
+
+/* Main Asides */
+.main-aside ul ul {
+    padding:0;
+}
+
+.primary-aside {
+}
+
+/* Content Asides */
+.site-content .aside {
+	margin-bottom: 4.6em;
+}
+
+.site-content .widgettitle {
+	margin-bottom:.5em;
+}
+
+.site-content .aside ul {
+    padding:0 1.250em;
+}
+
+.site-content .aside ul ul {
+    padding:0;
+}
+
+.index-insert {
+    margin-top: -0.2em;
+}
+.page-bottom {
+	margin-top:.5em;
+}
+
+/* Footer Asides */
+#subsidiary {
+    padding-top: 1.687em; 
+	padding-bottom: 0.25em;
+	
+	& .aside {
+	}
+	
+	& .aside a {
+	} 
+}

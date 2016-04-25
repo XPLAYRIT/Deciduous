@@ -2,72 +2,115 @@
 /**
  * Header Template
  *
- * This template calls a series of functions that output the head tag of the document.
- * The body and div #main elements are opened at the end of this file.
+ * This template calls a series of functions that output the head tag of the document
+ * as well as the header and opening div #main.
  *
- * @package Thematic
+ * @package Deciduous
  * @subpackage Templates
  */
+?>
+<!DOCTYPE html>
 
-	// Creates the doctype
-	thematic_doctype();
+<?php
+	/**
+	 * Outputs the html tag with filterable class attribute using the filter: deciduous_f_html_class
+	 *
+	 * Found in /library/header-extensions.php
+	 */
+	deciduous_html();
+?>
 
-	// Opens the html tag with attributes
-	thematic_html();
+<head>
+<meta charset="<?php echo ( get_bloginfo( 'charset' ) ) ?>" />
+<meta name="viewport" content="<?php echo apply_filters( 'deciduous_f_meta_viewport_content', 'width=device-width,initial-scale=1' ) ?>"/>
 
-	// Opens the head
-	thematic_head();
+<?php
+	/**
+	 * Output the meta tags for decription and robots
+	 *
+   	 * They are aware of most popular SEO plugins and will switch off
+   	 * if a SEO plugin is detected. Also can be switched off 
+	 * by returning FALSE to the filter: deciduous_f_seo_switch
+	 *
+	 * Found in /library/header-extensions.php
+   	 */
 
-	// Create the meta charset
-	thematic_meta_charset();
+	deciduous_meta_description();
 
-	// Create the meta viewport if theme supports it
-	thematic_meta_viewport();
+	deciduous_meta_robots();
+?>
+	
+<link rel="profile" href="http://gmpg.org/xfn/11" />	
 
-	// Create the title tag
-	thematic_doctitle();
+<?php
+	/**
+ 	 * Output the pingback adress
+	 *
+	 * Switch off by returning FALSE to the filter: deciduous_f_show_pingback_url
+	 *
+	 * Found in /library/header-extensions.php
+	 */
+	deciduous_pingback_url();
 
-	// Create the meta description
-	thematic_meta_description();
-
-	// Create the tag <meta name="robots"
-	thematic_meta_robots();
-
-	// Create pingback adress
-	thematic_show_pingback();
-
-	/* Loads Thematic's stylesheet and scripts
-	 * Calling wp_head() is required to provide plugins and child themes
-	 * the ability to insert markup within the <head> tag.
+	/**
+ 	 * The Action Hook wp_head() loads Deciduous' stylesheets and scripts:
+ 	 * style.css, sf-menu.js, menu-toggle.js, html5shiv.min.js, superfish.min.js
+ 	 *
+ 	 * All of which are enqueued in /library/extensions/header-extensions.php
+ 	 *
 	 */
 	wp_head();
+?>
 
-	// Filter provided for altering output of the head closing element
-	echo ( apply_filters( 'thematic_close_head',  '</head>' . "\n" ) );
+</head>
 
-	// Create the body element and dynamic body classes
-	thematic_body();
+<body <?php body_class() ?>>
 
-	// Action hook to place content before opening #wrapper
-	thematic_before();
+	<?php
+		// Load the action hook: deciduous_a_before_wrapper
+		deciduous_do_before_wrapper();
+	?>
+	
+	<div id="wrapper" class="hfeed site-wrapper">
+	
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'deciduous' ); ?></a>
 
-	// Filter provided for removing output of wrapping element follows the body tag
-	echo ( apply_filters( 'thematic_open_wrapper', '<div id="wrapper" class="hfeed site-wrapper">' ) );
+    	<?php
+			// Load the action hook: deciduous_a_before_header
+			deciduous_do_before_header();
+		?>
+	
+		<header id="header" class="site-header" role="banner">
+			
+			<?php 
+				// Load the action hook: deciduous_a_after_main_nav
+				deciduous_do_after_main_nav();
+			?>
+    	
+    		<?php
+				// Load the action hook: deciduous_a_before_branding
+				deciduous_do_before_branding();
+ 
+				// Load the template for the site branding
+				locate_template( array( 'template-parts/branding/branding.php' ), true );
 
-	// Action hook for placing content above the theme header
-	thematic_aboveheader();
+				// Load the action hook: deciduous_a_after_branding
+				deciduous_do_after_branding();
+			?>
+			
+			<?php 
+				// Load the template for the main navigation
+				locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+				
+				// Load the action hook: deciduous_a_after_main_nav
+				deciduous_do_after_main_nav();
+			?>
 
-	// Filter provided for altering output of the header opening element
-	echo ( apply_filters( 'thematic_open_header',  '<header id="header" class="site-header" role="banner">' ) );
+		</header><!-- .site-header-->
+	
+		<?php
+			// Load the action hook: deciduous_a_after_header
+			deciduous_do_after_header();
+		?>
 
-	// Action hook creating the theme header
-	thematic_header();
-
-	// Filter provided for altering output of the header closing element
-	echo ( apply_filters( 'thematic_close_header', '</header><!-- .site-header-->' ) );
-
-	// Action hook for placing content below the theme header
-	thematic_belowheader();
-
-	// Filter provided for altering output of the #main div opening element
-	echo ( apply_filters( 'thematic_open_main',  '<div id="main" class="site-main">' ) );
+		<div id="main" class="site-main">

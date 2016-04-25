@@ -1,0 +1,387 @@
+/**
+ * 8.0 Media Queries
+ * ----------------------------------------------------------------------------
+ */
+
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to 
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor 
+ * the meta tag. See http://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+
+@include breakpoint(large) {
+	
+	.content-wrapper,
+	.main-aside,
+	.sub-aside {
+		position: relative;
+	}
+	
+	.content-wrapper {
+	    width: span(8 of 12);
+	}
+	
+	.sub-aside {
+		width: span(4 of 12);
+	    padding: 0 20px 0 0;
+		float: left;
+	}
+	
+	.third-sub-aside {
+	    padding: 0;
+		float: right;
+	}
+	
+	#siteinfo {
+		clear: both;
+		margin: 0 auto;
+	}
+	
+	.right-sidebar {
+		 
+		& .content-wrapper {
+			float: left;
+		}
+	 	
+		& .site-content {
+	 		@include suffix(.5 of 12)
+	 	}
+		
+		& .main-aside {
+			 width: span( 4 of 12);
+			 float: right;
+		}
+		 
+		& .primary-aside {
+			margin-bottom: 0.7em;
+			padding-top: 0.2em;
+		}
+	
+		& .secondary-aside {
+			 clear: right;
+			 margin-top: 2.4em;
+		}
+	
+		& .main-aside .widget {
+
+		}
+	}
+	
+	.left-sidebar {
+		
+		& .content-wrapper {
+			float: right;
+		}
+		
+		& .site-content {
+	 		@include prefix(.5 of 12)
+	 	}
+	
+		& .main-aside {
+			width: span(4 of 12);
+			float:left;
+		}
+		
+	 	& .primary-aside {
+			margin-bottom: 0.7em;
+			padding-top: 0.2em;
+		}
+		
+		& .secondary-aside {
+			clear: left;
+			margin-top: 2.4em;
+		}
+		
+		& .main-aside .widget {
+
+	 	}
+	}
+	
+	.three-columns {
+		
+		& .site-main {
+			position: relative;
+		}
+	
+		& .content-wrapper {
+			width: 100%;
+			float: left;
+		}
+	
+		& .site-content {
+			@include pre(2.75 of 12);
+			@include post(2.75 of 12);
+			padding-left: gutter();
+			padding-right: gutter();
+			width: span(6.5 of 12);
+		}
+	
+		& .main-aside {
+			width: span(2.75 of 12);
+		}
+	
+		& .primary-aside {
+	    	float: left;
+			margin: -0.5em 0 0 -100%;
+			padding-right:gutter();
+		
+		& .primary-aside .widget {
+			margin-left: 0;
+		}
+		
+		& .secondary-aside .widget {
+			margin-right: 0;
+		}
+	}
+			
+		& .secondary-aside {
+			float: left;
+			@include pull(2.75 of 12);
+			margin-top: -0.5em;
+			padding-left:gutter();
+		
+			& .widget {
+				margin-right: 0;
+			}
+		}
+	}
+		
+	.full-width {
+		
+		& .content-wrapper,
+		& .site-content {
+			width: 100%;
+			margin-left: 0;
+		}
+	
+		& .site-content {
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	
+		& #comments {
+			max-width: 40em;
+		}
+	
+	}
+}
+
+@include breakpoint (medium) {
+	
+	.menu-toggle {
+		display: none;
+	}
+	/* Large Menu Structure */
+	.sf-menu {
+	
+		&, & * {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		& {
+			line-height: 1.2em;
+		}
+		& ul {
+			position:absolute;
+			top: -999em;
+			width: 10em; /* left offset of submenus need to match (see below) */
+			margin-top: 0.188em;
+		}
+		& ul li {
+			width: 100%;
+		}
+		& li {
+			float: left;
+			position: relative;
+			display: block;
+		}
+		& a {
+			display: block;
+			position: relative;
+		}
+		& li:hover ul,
+		& li.sfHover ul {
+			left: 0;
+			top: 2.1em; /* match top ul list item height */
+			z-index: 99;
+		}
+	}
+	ul.sf-menu li:hover li ul,
+	ul.sf-menu li.sfHover li ul {
+		top: -999em;
+	}
+	ul.sf-menu li li:hover ul,
+	ul.sf-menu li li.sfHover ul {
+		left: 10em; /* match ul width */
+		top: 0;
+	}
+	ul.sf-menu li li:hover li ul,
+	ul.sf-menu li li.sfHover li ul {
+		top:-999em;
+	}
+	ul.sf-menu li li li:hover ul,
+	ul.sf-menu li li li.sfHover ul {
+		left: 10em; /* match ul width */
+		top: 0;
+	}
+
+	/* Large Menu Presentation */
+	.menu {
+		
+	}
+	
+	.sf-menu {
+		float: left;
+	}
+
+	.sf-menu a {
+		padding: 0.563em 0.813em;
+		text-decoration:none;
+	}
+	
+	.sf-menu a, .sf-menu a:visited  {
+		color: #000;
+	}
+	
+	.sf-menu .current-menu-item > a,
+	.sf-menu .current-menu-parent > a,
+	.sf-menu .current-menu-ancestor > a,
+	.sf-menu .current-post-ancestor > a,
+	.sf-menu .current_page_item > a,
+	.sf-menu .current_page_ancestor > a,
+	.sf-menu .current_page_parent > a {
+		color: #000;
+	}
+	
+	.sf-menu .current-menu-item > a,
+	.sf-menu .current-menu-item > a:hover,
+	.sf-menu .current_page_item > a,
+	.sf-menu .current_page_item > a:hover {
+	}
+	
+	.sf-menu li .current-menu-item > a,
+	.sf-menu li .current-menu-item > a:hover,
+	.sf-menu li .current_page_item > a,
+	.sf-menu li .current_page_item > a:hover {
+	}
+	
+	.sf-menu li li .current-menu-item > a,
+	.sf-menu li li .current-menu-item > a:hover,
+	.sf-menu li li .current_page_item > a,
+	.sf-menu li li .current_page_item > a:hover {
+	}
+	
+	.sf-menu li {
+		
+	}
+	
+	.sf-menu li li {
+		background: #eee;
+	}
+	
+	.sf-menu li li li {
+		background: #e6e6e6;
+	}
+	
+	.sf-menu li:hover, 
+	.sf-menu li.sfHover, 
+	.sf-menu a:hover, 
+	.sf-menu a:active {
+		outline: 0;
+	}
+
+	.sf-menu ul ul {
+	    margin-top: 0;
+	}
+
+}
+
+
+@include breakpoint(small) {
+
+	.menu-toggle {
+		cursor: pointer;
+		margin: 0;
+		padding: 0.4em 1em;
+		font-style: normal;
+	}
+
+	.toggled-on {
+
+		& li,
+		& .children {
+			display: block;
+		}
+
+		& .sf-menu {
+			
+			&,
+			& > ul {
+				display: block;
+				margin-left: 0;
+				padding: 0;
+				width: 100%;
+			}
+		
+			& li > ul {
+				display: block;
+				float: none;
+				position: relative;
+				padding-left: 0;
+				left: auto;
+				top: auto;
+			}
+
+			& li li {
+				padding-left: 1.5em;
+			}
+
+			& li > ul a {
+				width: auto;
+			}
+
+			& a, 
+			& a:visited  {
+				color: $body-color;
+			}
+
+			& li:hover > a,
+			& .children a {
+
+			}
+
+			& .current-menu-item > a,
+			& .current-menu-parent > a,
+			& .current-menu-ancestor > a,
+			& .current-post-ancestor > a,
+			& .current_page_item > a,
+			& .current_page_ancestor > a,
+			& .current_page_parent > a {
+
+			}
+	
+			& .current_page_item > a,
+			& .current-menu-item > a {
+
+			}
+
+			& li a:hover,
+			& ul a:hover {
+			}
+		}
+	}
+	
+	ul.sf-menu,
+	div.sf-menu > ul {
+		display: none;
+	}
+}

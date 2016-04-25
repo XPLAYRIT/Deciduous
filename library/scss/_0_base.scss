@@ -1,0 +1,81 @@
+// import susy - susy.oddbird.net/
+// ==========================================================================
+
+@import 'compass';
+
+@import 'susy';
+
+@import 'breakpoint';
+
+// sass variables - http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#variables_
+// ==========================================================================
+
+
+@import "compass/typography/vertical_rhythm";
+ 
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$header-font: "Lato", sans-serif;
+$header-color: #000;
+
+$body-font: "Merriweather",Georgia, serif;
+
+$body-background: #fff;
+$body-background-lightened: lighten($body-background, 2%);
+$body-background-darkened: darken($body-background, 10%);
+$body-background-darker: darken($body-background-darkened, 10%);
+
+$body-color: #000;
+$body-color-lightened: lighten($body-color, 30%);
+$body-color-darkened: darken($body-color, 50%);
+
+$link-color: #23aadc;
+$link-color-darkened: darken($link-color, 10%);
+$link-focus: darken($link-color, 10%);
+$link-hover: darken($link-color, 10%);
+
+$link-color-current: #c8651f;
+
+$border-color:#ccc;
+$border-color-darkened:darken($border-color,50%);
+
+$selection-background: #c8651f; 
+$selection-color: #f1f1f1;
+
+
+// sass mixins - sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins
+// ==========================================================================
+
+// media query breakpoint mixin 
+@mixin breakpoint($point) {
+	@if $point == small{
+		@media (max-width: 37.5em)  { @content; }
+	}
+	@if $point == medium{
+		@media (min-width: 37.5em)  { @content; }
+	}
+	@else if $point == large {
+		@media (min-width: 53.125em) { @content; }
+	}
+	@else if $point { // allows custom breakpoints
+		@media (min-width: $point) { @content; }
+	}
+}
+
+
+// Susy Grids - Global Default http://susydocs.oddbird.net/en/latest/settings/
+$susy: (
+    columns: 12,
+    gutters: 1,
+    math: fluid,
+    output: float,
+    gutter-position: inside,
+    global-box-sizing: (border-box),
+	debug: (
+		image: show,
+		color: rgba(#66f, .25),
+		output: overlay,
+		toggle: bottom right,
+    ),
+);

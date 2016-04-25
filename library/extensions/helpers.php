@@ -2,10 +2,205 @@
 /**
  * Helper Functions
  *
- * @package ThematicCoreLibrary
+ * @package DeciduousLibrary
  * @subpackage Helpers
  */
+
+
+
+/**
+ * Displays a filterable Search Form
+ *
+ * This function is called from the searchform.php template. 
+ * That template is called by the WP function get_search_form()
+ *
+ * Filter: search_field_value Controls the input element's size attribute <br>
+ * Filter: deciduous_search_submit Controls the form's "submit" input element <br>
+ * Filters: deciduous_search_form Controls the entire from output just before display <br>
+ *
+ * @link http://codex.wordpress.org/Function_Reference/get_search_form Codex: get_search_form()
+ */
+function deciduous_search_form() {
+	$search_form_length = apply_filters('deciduous_f_search_form_length', '32');
+	$search_form  = "\n\t\t\t\t\t\t";
+	$search_form .= '<form id="searchform" method="get" action="' . home_url() .'/">';
+	$search_form .= "\n\n\t\t\t\t\t\t\t";
+	$search_form .= '<div>';
+	$search_form .= "\n\t\t\t\t\t\t\t\t";
+	if (is_search()) {
+	    	$search_form .= '<input id="s" name="s" type="text" value="' . esc_html ( stripslashes( $_GET['s'] ) ) .'" size="' . $search_form_length . '" tabindex="1" />';
+	} else {
+	    	$value = __( 'To search, type and hit enter', 'deciduous' );
+	    	$value = apply_filters( 'search_field_value',$value );
+	    	$search_form .= '<input id="s" name="s" type="text" value="' . $value . '" onfocus="if (this.value == \'' . $value . '\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'' . $value . '\';}" size="'. $search_form_length .'" tabindex="1" />';
+	}
+	$search_form .= "\n\n\t\t\t\t\t\t\t\t";
+	
+	$search_submit = '<input id="searchsubmit" name="searchsubmit" type="submit" value="' . __('Search', 'deciduous') . '" tabindex="2" />';
+	
+	$search_form .= apply_filters('deciduous_search_submit', $search_submit);
+	
+	$search_form .= "\n\t\t\t\t\t\t\t";
+	$search_form .= '</div>';
+	
+	$search_form .= "\n\n\t\t\t\t\t\t";
+	$search_form .= '</form>' . "\n\n\t\t\t\t\t";
+	
+	echo apply_filters('deciduous_f_search_form', $search_form);
+}
  
+/**
+ * Add a wrapping div to tables
+ * 
+ */
+function deciduous_table_wrap( $content ) {
+	
+	$search = array( '<table>','</table>' );
+	$replace = array( '<div class="table_wrap"><table>', '</table></div>' );
+	$content = str_replace( $search, $replace, $content );
+	
+    return $content;
+}
+add_filter('the_content','deciduous_table_wrap');
+
+
+if ( ! function_exists( 'deciduous_p_meta_separator' ) ) :
+/**
+ * Returns a filterable meta separator
+ *
+ */
+function deciduous_p_meta_separator( $class ) {
+	$separator = apply_filters( 'deciduous_f_meta_separator' , $separator = '|' );
+	
+	$meta_sep = '<span class="meta-sep meta-sep-' . $class .'">' . $separator . '</span>';
+	
+	return $meta_sep;
+}
+endif;
+
+
+/**
+ * Returns or echoes a theme option value by its key
+ * or returns false if no value is found
+ *
+ * @uses deciduous_get_wp_opt()
+ */
+function deciduous_get_theme_opt( $opt_key, $echo = false ) {
+	
+	$theme_opt =  wp_parse_args ( get_theme_mod( 'deciduous_theme_opt' ) , deciduous_default_opt() ); 
+	// using the $deafult arg for get_theme_mod() makes the cusomizer bail on the index-insert default setting
+	// so I am using wp_parse_args which seems to correct this. check again in a future release
+	
+	if ( !isset( $theme_opt[$opt_key] ) ) {
+		echo('false');return false;
+	}
+
+	if ( false === $echo ) {
+		return $theme_opt[$opt_key];
+	} else {
+		echo $theme_opt[$opt_key];
+	}
+
+}
+
+
+
+/**
+ * Returns default theme options.
+ *
+ * Filter: deciduous_theme_default_opt
+ *
+ */
+function deciduous_default_opt() {
+	$deciduous_default_opt = array(
+		'index_insert' 	=> 2,
+		'author_info'  	=> 0, // 0 = not checked 1 = checked
+		'footer_txt' 	=> 'Powered by WordPress. Built on the Deciduous Theme.',
+		'layout'        => deciduous_default_theme_layout()
+	);
+
+	return apply_filters( 'deciduous_f_theme_default_opt', $deciduous_default_opt );
+}	
+
+
+
+/**
+ * Specifies the available layouts for the theme
+ *
+ * @return array $layouts
+ */
+function deciduous_available_theme_layouts() {
+	$layouts = array(
+		'left-sidebar' => array(
+			'slug'  => 'left-sidebar',
+			'title' => __( 'Left Sidebar', 'deciduous' )
+		),
+		'right-sidebar' => array(
+			'slug' => 'right-sidebar',
+			'title' => __( 'Right Sidebar', 'deciduous' )
+		),
+		'three-columns' => array(
+			'slug' => 'three-columns',
+			'title' => __( 'Three columns', 'deciduous' )
+		),
+		'full-width' => array(
+			'slug' => 'full-width',
+			'title' => __( 'Full width', 'deciduous' )
+		)
+	);
+
+	return apply_filters( 'deciduous_f_available_theme_layouts', $layouts );
+}
+
+
+/**
+ * Create a simple array of the available layout strings
+ *
+ * @return array $layouts
+ */
+function deciduous_available_layout_slugs() {
+	$possible_layouts = deciduous_available_theme_layouts();
+	$available_layouts = array();
+	foreach( $possible_layouts as $layout) {
+		$available_layouts[] = $layout['slug'];
+	}
+
+	return $available_layouts;
+}
+
+
+/**
+ * Decide the default layout of the theme
+ *
+ * @return string $default_layout
+ */
+function deciduous_default_theme_layout() {
+
+	$options = get_theme_mod( 'deciduous_theme_opt', array() );
+
+	// use a default layout of right-sidebar if no theme option has been set
+	$deciduous_default_layout = isset( $options['layout'] ) ? $options['layout'] : 'right-sidebar';
+
+	/**
+	 * Filter for the default layout
+	 *
+	 * Specifies the theme layout upon first setup. The returned string need to match 
+	 * one of the available layout slugs. Any invalid slug will be ignored.
+	 *
+	 * @see deciduous_available_layout_slugs()
+	 *
+	 * @param string $deciduous_default_layout
+	 */
+	$deciduous_possible_default_layout = apply_filters( 'deciduous_f_default_theme_layout', $deciduous_default_layout );
+
+	// only use the filtered layout if it is a valid layout
+	if ( in_array( $deciduous_possible_default_layout, deciduous_available_layout_slugs() ) ) {
+		$deciduous_default_layout = $deciduous_possible_default_layout;
+	}
+
+	return $deciduous_default_layout;
+}
+
  
 
 /**
@@ -14,7 +209,7 @@
  * @param mixed $text
  * @return $text
  */
-function thematic_trim_excerpt($text) {
+function deciduous_trim_excerpt($text) {
 	if ( '' == $text ) {
 		$text = get_the_content('');
 
@@ -36,18 +231,17 @@ function thematic_trim_excerpt($text) {
 
 
 /**
- * thematic_the_excerpt function.
+ * deciduous_the_excerpt function.
  * 
- * @param string $deprecated (default: '')
  * @return $output
  */
-function thematic_the_excerpt( $deprecated = '' ) {
+function deciduous_the_excerpt() {
 	global $post;
 	$output = '';
 	$output = strip_tags( $post->post_excerpt );
 	$output = str_replace( '"', '\'', $output );
 	if ( post_password_required($post) ) {
-		$output = __( 'There is no excerpt because this is a protected post.', 'thematic');
+		$output = __( 'There is no excerpt because this is a protected post.', 'deciduous');
 		return $output;
 	}
 
@@ -57,30 +251,30 @@ function thematic_the_excerpt( $deprecated = '' ) {
 
 
 /**
- * thematic_excerpt_rss function.
+ * deciduous_excerpt_rss function.
  *
  * @return $output
  */
-function thematic_excerpt_rss() {
+function deciduous_excerpt_rss() {
 	global $post;
 	$output = '';
 	$output = strip_tags( $post->post_excerpt );
 	if ( post_password_required( $post ) ) {
-		$output = __( 'There is no excerpt because this is a protected post.', 'thematic' );
+		$output = __( 'There is no excerpt because this is a protected post.', 'deciduous' );
 		return $output;	
 	}
 
-	return apply_filters( 'thematic_excerpt_rss', $output );
+	return apply_filters( 'deciduous_excerpt_rss', $output );
 
 }
 
-add_filter( 'thematic_excerpt_rss', 'thematic_trim_excerpt' );
+add_filter( 'deciduous_excerpt_rss', 'deciduous_trim_excerpt' );
 
 
 /**
  * Create nice multi_tag_title
  */
-function thematic_tag_query() {
+function deciduous_tag_query() {
 	$nice_tag_query = get_query_var( 'tag' ); // tags in current query
 	$nice_tag_query = str_replace(' ', '+', $nice_tag_query); // get_query_var returns ' ' for AND, replace by +
 	$tag_slugs = preg_split('%[,+]%', $nice_tag_query, -1, PREG_SPLIT_NO_EMPTY); // create array of tag slugs
@@ -113,10 +307,9 @@ function thematic_tag_query() {
 /**
  * Gets the term name of the current post
  *
- * @todo deprcate when thematic_body_class becomes a filter of body_class
  * @return $term->name
  */
-function thematic_get_term_name() {
+function deciduous_get_term_name() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
 	return $term->name;
 }
@@ -127,123 +320,13 @@ function thematic_get_term_name() {
  * 
  * @return bool
  */
-function thematic_is_custom_post_type() {
+function deciduous_is_custom_post_type() {
 	global $post; 
 
-	if ( !in_array(  $post->post_type , get_post_types( array( '_builtin' => true ) ) ) ) {
+	if ( ! in_array(  $post->post_type , get_post_types( array( '_builtin' => true ) ) ) ) {
 		return true;
  	}
  	return false;
 }
 
-/**
- * Determine if we want to use html5 or xhtml markup
- *
- * @return bool True for xhtml, false for html5 markup
- */
-function thematic_is_legacy_xhtml() {
-
-	// Child themes can set html5 markup
-	if ( current_theme_supports( 'thematic_html5' ) ) {
-		return false;
-	}
-
-	// Child themes can opt to use xhtml
-	if ( current_theme_supports( 'thematic_xhtml' ) ) {
-		return true;
-	}
-
-	// New 2.0 installations do not use the legacy mode by default
-	if ( 0 == thematic_get_theme_opt( 'legacy_xhtml' ) ) {
-		return false;
-	}
-
-	return apply_filters( 'thematic_is_legacy_xhtml', true );
-}
-
-
-/**
- * Specifies the available layouts for the theme
- *
- * @since 2.0.0
- *
- * @return array $layouts
- */
-function thematic_available_theme_layouts() {
-	$layouts = array(
-		'left-sidebar' => array(
-			'slug'  => 'left-sidebar',
-			'title' => __( 'Left Sidebar', 'thematic' )
-		),
-		'right-sidebar' => array(
-			'slug' => 'right-sidebar',
-			'title' => __( 'Right Sidebar', 'thematic' )
-		),
-		'three-columns' => array(
-			'slug' => 'three-columns',
-			'title' => __( 'Three columns', 'thematic' )
-		),
-		'full-width' => array(
-			'slug' => 'full-width',
-			'title' => __( 'Full width', 'thematic' )
-		)
-	);
-
-	return apply_filters( 'thematic_available_theme_layouts', $layouts );
-}
-
-
-/**
- * Create a simple array of the available layout strings
- *
- * @since 2.0.0
- *
- * @return array $layouts
- */
-function thematic_available_layout_slugs() {
-	$possible_layouts = thematic_available_theme_layouts();
-	$available_layouts = array();
-	foreach( $possible_layouts as $layout) {
-		$available_layouts[] = $layout['slug'];
-	}
-
-	return $available_layouts;
-}
-
-
-/**
- * Decide the default layout of the theme
- *
- * @since 2.0.0
- *
- * @return string $default_layout
- */
-function thematic_default_theme_layout() {
-
-	$options = thematic_get_wp_opt( 'thematic_theme_opt' );
-
-	// use a default layout of right-sidebar if no theme option has been set
-	$thematic_default_layout = isset( $options['layout'] ) ? $options['layout'] : 'right-sidebar';
-
-	/**
-	 * Filter for the default layout
-	 *
-	 * Specifies the theme layout upon first setup. The returned string need to match 
-	 * one of the available layout slugs. Any invalid slug will be ignored.
-	 *
-	 * @since 2.0.0
-	 *
-	 * @see thematic_available_layout_slugs()
-	 *
-	 * @param string $thematic_default_layout
-	 */
-	$thematic_possible_default_layout = apply_filters( 'thematic_default_theme_layout', $thematic_default_layout );
-
-	// only use the filtered layout if it is a valid layout
-	if ( in_array( $thematic_possible_default_layout, thematic_available_layout_slugs() ) ) {
-		$thematic_default_layout = $thematic_possible_default_layout;
-	}
-
-	return $thematic_default_layout;
-}
 ?>

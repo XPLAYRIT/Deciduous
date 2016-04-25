@@ -1,8 +1,8 @@
 <?php
 /**
- * Thematic support for Theme Customizer
+ * deciduous support for Theme Customizer
  *
- * @package ThematicCoreLibrary
+ * @package DeciduousLibrary
  * @subpackage Customizer
  */
 
@@ -10,18 +10,16 @@
 /**
  * Implement Theme Customizer additions and adjustments.
  *
- * @since 2.0.0
- *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function thematic_customize_register( $wp_customize ) {
+function deciduous_customize_register( $wp_customize ) {
 	
 	/**
 	 * Create a custom control to use a textarea for the footer text
 	 * 
 	 * @link http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
 	 */
-	class Thematic_Customize_Textarea_Control extends WP_Customize_Control {
+	class Deciduous_Customize_Textarea_Control extends WP_Customize_Control {
 	    public $type = 'textarea';
 
 	    public function render_content() {
@@ -38,74 +36,126 @@ function thematic_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Get the default thematic footer text 
-	$thematic_defaults = thematic_default_opt();
-	$thematic_default_footertext = $thematic_defaults['footer_txt'];
-	$thematic_default_layout = $thematic_defaults['layout'];
+	// Get the defaults 
+	$deciduous_defaults = deciduous_default_opt();
 
+	/**
+	 * Layout
+	 */
+	 	
 	// Only show the layout section if the theme supports it
-	if( current_theme_supports('thematic_customizer_layout') ) {
-		
-		$wp_customize->add_section( 'thematic_layout', array(
-			'title'       => __( 'Layout', 'thematic' ),
-			'description' => __( 'Choose the main layout of your theme', 'thematic' ),
+	if( current_theme_supports('deciduous_s_customizer_layout') ) {
+	
+		$deciduous_default_layout = $deciduous_defaults['layout'];
+
+		$wp_customize->add_section( 'deciduous_layout', array(
+			'title'       => __( 'Layout', 'deciduous' ),
+			'description' => __( 'Choose the main layout of your theme', 'deciduous' ),
 			'capability'  => 'edit_theme_options',
 			'priority'    => '90'
 		) );
-		
-		$wp_customize->add_setting( 'thematic_theme_opt[layout]', array(
-			'default'  => $thematic_default_layout,
-			'type'   => 'option',
+
+		$wp_customize->add_setting( 'deciduous_theme_opt[layout]', array(
+			'default'  => $deciduous_default_layout,
+			'type'   => 'theme_mod',
+			'sanitize_callback'	=> 'sanitize_html_class'
 		) );
-		
-		$possible_layouts = thematic_available_theme_layouts();
+
+		$possible_layouts = deciduous_available_theme_layouts();
 		$available_layouts = array();
 		foreach( $possible_layouts as $layout) {
 			$available_layouts[ $layout['slug'] ] = $layout['title'];
 		}
 
-		$wp_customize->add_control( 'thematic_layout_control', array(
+		$wp_customize->add_control( 'deciduous_layout_control', array(
 			'type'  => 'radio',
-			'label'  => __( 'Theme layout', 'thematic' ),
-			'section' => 'thematic_layout',
+			'label'  => __( 'Theme layout', 'deciduous' ),
+			'section' => 'deciduous_layout',
 			'choices' => $available_layouts,
-			'settings' => 'thematic_theme_opt[layout]'
+			'settings' => 'deciduous_theme_opt[layout]'
 		) );
 	}
+
+
+	/**
+	 * Author Info vCard
+	 */
+	 
+	if ( current_theme_supports( 'deciduous_s_author_info' ) ) {
 	
-	// Add section for thematic footer options 
-    $wp_customize->add_section( 'thematic_footer_text', array(
-		'title'			=> __( 'Footer', 'thematic'),
-		'description'	=> sprintf( _x('You can use HTML and shortcodes in your footer text. Shortcode examples: %s', '%s are shortcode tags', 'thematic'), '[wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]' ),
+		// Get the default author info value
+		$deciduous_default_author_info = $deciduous_defaults['author_info'];
+
+		$wp_customize->add_section( 'deciduous_author_info', array(
+			'title'			=> __( 'Info on Author Page', 'deciduous'),
+			'description'	=> sprintf( _x('Display a %1$smicroformatted vCard%2$s with the author\'s avatar, bio and email on the author page.', '%1$s and %2$s are <a> tags', 'deciduous' ) , '<a target="_blank" href="http://microformats.org/wiki/hcard">', '</a>' ), 
+			'priority'		=> 130,
+		) );
+		
+		
+		// Add setting for author info  
+    	$wp_customize->add_setting( 'deciduous_theme_opt[author_info]', array(
+			'default'			=> $deciduous_default_author_info,
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'absint'
+		) );
+ 
+		// Add control for author info
+		$wp_customize->add_control( 'deciduous_theme_opt[author_info]', array(
+			'label'			=> __('Display Author Info on Author Page', 'deciduous'),
+			'section'		=> 'deciduous_author_info',
+			'type'			=> 'checkbox',
+			'settings'		=> 'deciduous_theme_opt[author_info]'
+		) );
+
+}
+
+	/**
+	 * Footer Text
+	 */
+	
+	$deciduous_default_footertext = $deciduous_defaults['footer_txt'];
+	
+	// Add section for deciduous footer options 
+    $wp_customize->add_section( 'deciduous_footer_text', array(
+		'title'			=> __( 'Footer', 'deciduous'),
+		'description'	=> __('You can use HTML and shortcodes in your footer text.', 'deciduous'),
 		'priority'		=> 135,
 	) );
 	
 	// Add setting for footer text 
-    $wp_customize->add_setting( 'thematic_theme_opt[footer_txt]', array(
-		'default'		=> $thematic_default_footertext,
-		'type'			=> 'option',
+    $wp_customize->add_setting( 'deciduous_theme_opt[footer_txt]', array(
+		'default'		=> $deciduous_default_footertext,
+		'type'			=> 'theme_mod',
 		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'refresh'
+		'transport'		=> 'postMessage',
+		'sanitize_callback'	=> 'wp_kses_post'
 	) );
- 
+
 	// Add control for footer text 
-	$wp_customize->add_control( new Thematic_Customize_Textarea_Control( $wp_customize, 'thematic_theme_opt[footer_txt]', array(
-		'label'			=> __('Footer text', 'thematic'),
-		'section'		=> 'thematic_footer_text',
+	$wp_customize->add_control( new Deciduous_Customize_Textarea_Control( $wp_customize, 'deciduous_theme_opt[footer_txt]', array(
+		'label'			=> __('Footer text', 'deciduous'),
+		'section'		=> 'deciduous_footer_text',
 		'type'			=> 'textarea',
-		'settings'		=> 'thematic_theme_opt[footer_txt]'
+		'settings'		=> 'deciduous_theme_opt[footer_txt]'
 	) ) );
 
 }
-add_action( 'customize_register', 'thematic_customize_register' );
+
+
+
+add_action( 'customize_register', 'deciduous_customize_register' );
+
+
+
 
 
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * @since 2.0.0
  */
-function thematic_customize_preview_js() {
-	wp_enqueue_script( 'thematic_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '20131119', true );
+function deciduous_customize_preview_js() {
+	wp_enqueue_script( 'deciduous_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '20160205', true );
 }
-add_action( 'customize_preview_init', 'thematic_customize_preview_js' );
+add_action( 'customize_preview_init', 'deciduous_customize_preview_js' );
