@@ -59,6 +59,7 @@ function deciduous_table_wrap( $content ) {
 	$replace = array( '<div class="table_wrap"><table>', '</table></div>' );
 	$content = str_replace( $search, $replace, $content );
 	
+    return $content;
 }
 add_filter('the_content','deciduous_table_wrap');
 
