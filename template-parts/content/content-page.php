@@ -5,19 +5,22 @@
  * @package Deciduous
  * @subpackage Template Parts
  */
- 
+?>
 
-	while ( have_posts() ) : the_post();
+	<?php
+		while ( have_posts() ) : the_post();
 
 		// Load action hook: deciduous_a_before_post
 		deciduous_do_before_post();
-
-?>
+	?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 			<?php
-				// creating the post header
+		    	/** 
+		     	 * A Plugable function that creates the post header
+		     	 * Found in library/extensions/content-extensions.php
+		     	 */
 				deciduous_p_postheader();
 			?>
 
@@ -36,7 +39,6 @@
 			</article><!-- #post -->
 
 		<?php
-
 			// Load action hook: deciduous_a_after_post
 			deciduous_do_after_post();
 

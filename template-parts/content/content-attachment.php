@@ -6,11 +6,19 @@
  * @subpackage Template Parts
  */
  ?>
+ 
+ 		<?php 
+			// Load action hook for deciduous_a_before_post
+			deciduous_do_before_post();
+		?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 			<?php
-				// creating the post header
+		    	/** 
+		    	 * A Plugable function that creates the post header
+		    	 * Found in library/extensions/content-extensions.php
+		    	 */
 				deciduous_postheader();
 			?>
 
@@ -30,8 +38,16 @@
 				</div><!-- .entry-content -->
 
 				<?php
-					// creating the post footer
+		    	/** 
+		    	 * A Plugable function that creates the post footer
+		    	 * Found in library/extensions/content-extensions.php
+		    	 */
 					deciduous_p_postfooter();
 				?>
 
 			</article><!-- #post -->
+
+ 		<?php 
+			// Load action hook for deciduous_a_after_post
+			deciduous_do_after_post();
+		?>

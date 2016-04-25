@@ -30,7 +30,10 @@
 				<div id="content" class="site-content" role="main">
 
 					<?php
-						// Output the page title
+		    			/** 
+		    			 * A Plugable function that creates the post title
+		    			 * Found in library/extensions/content-extensions.php
+		    			 */
 						deciduous_p_page_title();
 						
 						/**

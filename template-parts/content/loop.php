@@ -20,22 +20,42 @@ if( have_posts() ) :
 
     				<?php
 						if( is_search() ) {
+							/** 
+		    	 			 * A Plugable function that creates the page title
+		    	 			 * Found in library/extensions/content-extensions.php
+		    				 */
         					deciduous_p_page_title();
         				} else {
+							/** 
+		    	 			 * A Plugable function that creates the post header
+		    	 			 * Found in library/extensions/content-extensions.php
+		    				 */
 							deciduous_p_postheader();
 						}
         			?>
 
     				<div class="entry-content">
 
-    					<?php deciduous_p_content(); ?>
+    					<?php 
+							/** 
+		    	 			 * A Plugable function that creates the post content
+		    	 			 * Found in library/extensions/content-extensions.php
+		    				 */
+		    				deciduous_p_content(); 
+		    			?>
 
     					<?php wp_link_pages( array( 'before' => sprintf( '<nav class="page-link">%s', __( 'Pages:', 'deciduous' ) ),
     										'after' => '</nav>' ) ); ?>
 
     				</div><!-- .entry-content -->
 
-    				<?php deciduous_p_postfooter(); ?>
+    				<?php
+						/** 
+		    	 		 * A Plugable function that creates the post content
+		    	 		 * Found in library/extensions/content-extensions.php
+		    			 */
+		    			deciduous_p_postfooter(); 
+		    		?>
 
     			</article><!-- #post -->
 

@@ -41,15 +41,20 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 						<?php
-							// creating the post header
+							/**
+							 * A Plugable function for creating the post header
+							 * Located in library/extensions/content-extensions.php
+							 */
 							deciduous_p_postheader();
 						?>
 
 						<div class="entry-content">
 
 							<?php
+								// Getting the Page content
 								the_content();
 								edit_post_link( __( 'Edit', 'deciduous' ),'<span class="edit-link">','</span>' );
+								// Loading the archives template part
 								locate_template( array( 'template-parts/content/content-archives.php') , true );
 							?>
 

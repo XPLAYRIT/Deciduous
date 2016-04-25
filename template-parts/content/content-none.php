@@ -8,10 +8,9 @@
  ?>
 
  		<?php 
-			// action hook for insterting content before #post
+			// Load action hook for deciduous_a_before_post
 			deciduous_do_before_post();
-		?>
-		<?php 
+
 			if( is_404() ) {
 				deciduous_p_postheader();
 			} elseif  (is_search() ) {
@@ -42,6 +41,6 @@
 		</div><!-- .post -->
 		
 		<?php
-			// action hook for insterting content after #post
+			// Load action hook for deciduous_a_after_post
 			deciduous_do_after_post();
 		?>
