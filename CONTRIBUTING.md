@@ -21,7 +21,7 @@ __Please Note:__ GitHub is for bug reports and contributions only - if you have 
 * When committing, reference your issue (if present) and include a note about the fix
 * Please take care to write a good commit message. Your message will be part of the history of the repository and a good message helps everyone understand what has happened. Some tips and guidelines can be found in the additional resource list further down.
 * If possible, and if applicable, please also add/update unit tests for your changes
-* Push the changes to your fork and submit a pull request to the 'master' branch of the Thematic repository
+* Push the changes to your fork and submit a pull request to the 'master' branch of the Deciduous repository
 
 ## Code Documentation
 
