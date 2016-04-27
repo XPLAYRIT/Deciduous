@@ -3,7 +3,7 @@
  * Widget Area Primary
  *
  * 
- * @package Thematic
+ * @package Deciduous
  * @subpackage Widget-Areas
  */
 

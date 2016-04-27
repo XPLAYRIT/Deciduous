@@ -4,7 +4,7 @@
  *
  * …
  * 
- * @package Thematic
+ * @package Deciduous
  * @subpackage Widget-Areas
  */
 
