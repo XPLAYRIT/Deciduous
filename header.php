@@ -81,11 +81,6 @@
 		?>
 	
 		<header id="header" class="site-header" role="banner">
-			
-			<?php 
-				// Load the action hook: deciduous_a_after_main_nav
-				deciduous_do_after_main_nav();
-			?>
     	
     		<?php
 				// Load the action hook: deciduous_a_before_branding
