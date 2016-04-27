@@ -40,7 +40,7 @@
 
 					?>
 
-				</div><!-- #container -->' . "\n\n" );
+				</div><!-- #container -->
 
 				<?php
     				// Load action hook: deciduous_a_after_container
