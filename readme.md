@@ -28,7 +28,7 @@ More information can be found at [d.eciduo.us](http://d.eciduo.us).
 1. You can clone the GitHub repository: `https://github.com/emhr/Deciduous.git`
 2. Or download it directly as a ZIP file: `https://github.com/emhr/Deciduous/archive/master.zip`
 
-This will download the latest development version of Thematic.
+This will download the latest development version of Deciduous.
 
 ## Bugs ##
 If you find an issue, let us know [here](https://github.com/emhr/Deciduous/issues?state=open)!
@@ -43,5 +43,5 @@ There are various ways you can contribute:
 
 1. Raise an [Issue](https://github.com/emhr/Deciduous/issues) on GitHub
 2. Send us a Pull Request with your bug fixes and/or new features
-3. Translate Thematic into different languages. You can register for our [glotpress translation project](http://translate.d.eciduo.us/projects/deciduous) and start translating. [Contact us](http://d.eciduo.us/contact) if your language is missing  or if you want to become a validator for a language and we will set it up.
+3. Translate Deciduous into different languages. You can register for our [glotpress translation project](http://translate.d.eciduo.us/projects/deciduous) and start translating. [Contact us](http://d.eciduo.us/contact) if your language is missing  or if you want to become a validator for a language and we will set it up.
 4. Provide feedback and suggestions on [enhancements](https://github.com/emhr/Deciduous/issues?direction=desc&labels=enhancement&page=1&sort=created&state=open)
