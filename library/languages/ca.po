@@ -1,46 +1,54 @@
-# Copyright (C) 2016 Gene Robinson
-# This file is distributed under the GNU General Public License v2.0.
+# Translation of Deciduous in Catalan
+# This file is distributed under the same license as the Deciduous package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Deciduous 0.9.0-alpha\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Deciduous\n"
-"POT-Creation-Date: 2016-04-28 23:02:50+00:00\n"
+"PO-Revision-Date: 2016-04-28 17:37:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-
-#: comments.php:24
-msgid "Please do not load this page directly."
-msgstr ""
-
-#: comments.php:34
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: comments.php:113
-msgid "Trackbacks"
-msgstr ""
-
-#: comments.php:113
-msgctxt "%1$ and %2$s are <span> tags"
-msgid "%1$sOne%2$s Trackback"
-msgstr ""
-
-#: functions.php:150
-msgid "Primary Menu"
-msgstr ""
-
-#: header.php:76
-msgid "Skip to content"
-msgstr ""
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.0.1\n"
+"Project-Id-Version: Deciduous\n"
 
 #: library/extensions/backwards-compatibility.php:35
 msgctxt "%1s and %2s represent a version number"
 msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
 msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%s repestents a link to WordPress.org"
+msgid "Powered by %s"
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%1s and %2s are an <a> tag"
+msgid "Built with the %1sDeciduous Theme%2s"
+msgstr ""
+
+#: comments.php:24
+msgid "Please do not load this page directly."
+msgstr "Si us plau, no carreguis aquesta pàgina directament."
+
+#: comments.php:34
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Aquesta entrada està protegida per contrasenya. Poseu la contrasenya per veure els comentaris."
+
+#: comments.php:113
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: comments.php:113
+msgctxt "%1$ and %2$s are <span> tags"
+msgid "%1$sOne%2$s Trackback"
+msgstr "%1$sUn%2$s Trackback"
+
+#: functions.php:150
+msgid "Primary Menu"
+msgstr "Menú Principal"
+
+#: header.php:76
+msgid "Skip to content"
+msgstr "Saltar al contingut"
 
 #: library/extensions/customizer.php:52
 msgid "Layout"
@@ -56,12 +64,12 @@ msgstr ""
 
 #: library/extensions/customizer.php:90
 msgid "Info on Author Page"
-msgstr ""
+msgstr "Informació en la pàgina de l'autor"
 
 #: library/extensions/customizer.php:91
 msgctxt "%1$s and %2$s are <a> tags"
 msgid "Display a %1$smicroformatted vCard%2$s with the author's avatar, bio and email on the author page."
-msgstr ""
+msgstr "Mostrar una %1$svCard amb microformat%2$s amb l'avatar, la biografia i el correu electrònic de l'autor a la seva pàgina."
 
 #: library/extensions/customizer.php:106
 msgid "Display Author Info on Author Page"
@@ -81,25 +89,15 @@ msgstr ""
 
 #: library/extensions/helpers.php:33
 msgid "To search, type and hit enter"
-msgstr ""
+msgstr "Per a buscar, escriu i prem enter"
 
 #: library/extensions/helpers.php:39
 #: library/extensions/widget-area-extensions.php:280
 msgid "Search"
-msgstr ""
+msgstr "Cercar"
 
 #: library/extensions/helpers.php:117
 msgid "https://wordpress.org/"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%s repestents a link to WordPress.org"
-msgid "Powered by %s"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%1s and %2s are an <a> tag"
-msgid "Built with the %1sDeciduous Theme%2s"
 msgstr ""
 
 #: library/extensions/helpers.php:140
@@ -120,129 +118,124 @@ msgstr ""
 
 #: library/extensions/helpers.php:248 library/extensions/helpers.php:267
 msgid "There is no excerpt because this is a protected post."
-msgstr ""
+msgstr "No hi ha extracte perquè aquesta entrada està protegida."
 
 #: library/extensions/post-comments-extensions.php:14
 msgctxt "Posted {$date} at {$time}"
 msgid "Posted %s at %s"
-msgstr ""
+msgstr "Escrit el %s a les %s"
 
 #: library/extensions/post-comments-extensions.php:24
 msgid "Permalink"
-msgstr ""
+msgstr "Enllaç permanent"
 
 #. translators: post edit link
-
 #: library/extensions/post-comments-extensions.php:32
 #: library/extensions/post-comments-extensions.php:128
 #: library/extensions/post-footer-extensions.php:95
 #: library/extensions/post-header-extensions.php:241
 #: template-page-archives.php:56 template-parts/content/content-page.php:34
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: library/extensions/post-comments-extensions.php:73
 msgid "Your comment is awaiting moderation"
-msgstr ""
+msgstr "El teu comentari està esperant aprovació"
 
 #: library/extensions/post-comments-extensions.php:88
 msgid "Reply"
-msgstr ""
+msgstr "Respondre"
 
 #: library/extensions/post-comments-extensions.php:89
 msgid "Log in to reply."
-msgstr ""
+msgstr "Obre una sessió per respondre."
 
 #: library/extensions/post-comments-extensions.php:121
 msgctxt "By {$authorlink} on {$date} at {$time}"
 msgid "By %1$s on %2$s at %3$s"
-msgstr ""
+msgstr "Per %1$s el %2$s a les %3$s"
 
 #: library/extensions/post-comments-extensions.php:137
 msgid "Your trackback is awaiting moderation"
-msgstr ""
+msgstr "El teu trackback està esperant aprovació"
 
 #: library/extensions/post-comments-extensions.php:188
 msgctxt "One Comment, where %$1s and %$2s are <span> tags"
 msgid "%1$sOne%2$s Comment"
-msgstr ""
+msgstr "%1$sUn%2$s Comentari"
 
 #: library/extensions/post-comments-extensions.php:207
 msgid "Comments"
-msgstr ""
+msgstr "Comentaris"
 
 #. translators: comment form title
-
 #: library/extensions/post-comments-extensions.php:234
 msgid "Post a Comment"
-msgstr ""
+msgstr "Publicar un comentari"
 
 #. translators: comment reply form title, %s is author of comment
-
 #: library/extensions/post-comments-extensions.php:246
 msgid "Post a Reply to %s"
-msgstr ""
+msgstr "Respondre a %s"
 
 #. translators: label for comment form textarea
-
 #: library/extensions/post-comments-extensions.php:258
 msgctxt "noun"
 msgid "Comment"
-msgstr ""
+msgstr "Comentari"
 
 #: library/extensions/post-comments-extensions.php:269
 msgid "Cancel reply"
-msgstr ""
+msgstr "Cancel·lar resposta"
 
 #. translators: text of comment button
-
 #: library/extensions/post-comments-extensions.php:281
 msgid "Post Comment"
-msgstr ""
+msgstr "Publicar comentari"
 
 #: library/extensions/post-comments-extensions.php:308
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: library/extensions/post-comments-extensions.php:308
 #: library/extensions/post-comments-extensions.php:309
 msgctxt "denotes required field"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: library/extensions/post-comments-extensions.php:309
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: library/extensions/post-comments-extensions.php:310
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <em> tags for emphasis on never"
 msgid "Your email is %1$snever%2$s published nor shared."
-msgstr ""
+msgstr "El teu email %1$smai%2$s serà publicat ni compartit."
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <span> tags"
 msgid "Required fields are marked %1$s*%2$s"
-msgstr ""
+msgstr "Els camps obligatoris estan marcats amb un %1$s*%2$s"
 
 #: library/extensions/post-comments-extensions.php:320
 msgid "You must be %1$slogged in%2$s to post a comment."
-msgstr ""
+msgstr "Has d'%1$sobrir una sessió%2$s per a escriure un comentari."
 
 #: library/extensions/post-comments-extensions.php:320
 msgid "Log in"
-msgstr ""
+msgstr "Obrir sessió"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Logged in as %s"
-msgstr ""
+msgstr "Sessió oberta com %s"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Log out?"
-msgstr ""
+msgstr "Tancar la sessió?"
 
 #: library/extensions/post-comments-extensions.php:324
 msgctxt "%$1s and %$2s are <abbr> tags"
@@ -251,89 +244,83 @@ msgstr ""
 
 #: library/extensions/post-content-extensions.php:82
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Enllaç permanent a %s"
 
 #. translators: %s is right angle brackets
-
 #: library/extensions/post-content-extensions.php:103
 msgid "Read More %s"
-msgstr ""
+msgstr "Llegir més %s"
 
 #. translators: %s is custom post type singular name, wrapped in link tags
-
 #: library/extensions/post-footer-extensions.php:40
 msgid "Browse the %s archive."
-msgstr ""
+msgstr "Explorar l'arxiu de %s."
 
 #: library/extensions/post-footer-extensions.php:47
 msgctxt "1s and 2s are the a href link wrappers, do not reverse them"
 msgid "Bookmark the %1$spermalink%2$s."
-msgstr ""
+msgstr "Guardar l'%1$senllaç permanent%2$s."
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:183
 msgid "This entry was posted in %s"
-msgstr ""
+msgstr "Aquesta entrada va ser publicada en %s"
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:200
 msgid "Also posted in %s"
-msgstr ""
+msgstr "També publicada en %s"
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:209
 msgid "Posted in %s"
-msgstr ""
+msgstr "Publicat en %s"
 
 #: library/extensions/post-footer-extensions.php:229
 msgid "This entry is tagged"
-msgstr ""
+msgstr "Aquesta entrada està etiquetada com"
 
 #: library/extensions/post-footer-extensions.php:234
 msgid "and tagged"
-msgstr ""
+msgstr "i etiquetada com"
 
 #: library/extensions/post-footer-extensions.php:240
 msgid "Also tagged"
-msgstr ""
+msgstr "També etiquetada com"
 
 #: library/extensions/post-footer-extensions.php:246
 msgid "Tagged"
-msgstr ""
+msgstr "Etiquetes"
 
 #. translators: number of comments and trackbacks
-
 #: library/extensions/post-footer-extensions.php:274
 msgid "%s Response"
 msgid_plural "%s Responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s Resposta"
+msgstr[1] "%s Respostes"
 
 #: library/extensions/post-footer-extensions.php:281
 msgid "Leave a comment"
-msgstr ""
+msgstr "Deixar un comentari"
 
 #: library/extensions/post-footer-extensions.php:287
 msgid "Comments closed"
-msgstr ""
+msgstr "Comentaris tancats"
 
 #: library/extensions/post-footer-extensions.php:303
 msgctxt "1s and 2s are the a href link wrappers, do not reverse them. 3s is trackback url."
 msgid "%1$sPost a comment%2$s or leave a trackback: %3$s"
-msgstr ""
+msgstr "%1$sAfegeix un comentari%2$s o deixa un trackback: %3$s"
 
 #: library/extensions/post-footer-extensions.php:309
 #: library/extensions/post-footer-extensions.php:318
 msgid "Trackback URL"
-msgstr ""
+msgstr "URL del Trackback"
 
 #: library/extensions/post-footer-extensions.php:315
 msgctxt "%s is trackback url, wrapped in link tags"
 msgid "Comments are closed, but you can leave a trackback: %s"
-msgstr ""
+msgstr "Els comentaris estan tancats, però pots deixar un trackback: %s"
 
 #: library/extensions/post-footer-extensions.php:324
 msgctxt "1s and 2s are the a href link wrappers, do not reverse them"
@@ -342,40 +329,40 @@ msgstr ""
 
 #: library/extensions/post-footer-extensions.php:330
 msgid "Both comments and trackbacks are currently closed."
-msgstr ""
+msgstr "Tant els comentaris com els trackbacks estan tancats."
 
 #: library/extensions/post-header-extensions.php:35
 msgid "Author Archives:"
-msgstr ""
+msgstr "Autor:"
 
 #: library/extensions/post-header-extensions.php:40
 msgid "Category Archives:"
-msgstr ""
+msgstr "Categoria:"
 
 #: library/extensions/post-header-extensions.php:50
 msgid "Search Results for:"
-msgstr ""
+msgstr "Resultats de la cerca:"
 
 #: library/extensions/post-header-extensions.php:55
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Etiqueta:"
 
 #: library/extensions/post-header-extensions.php:64
 #: library/extensions/post-header-extensions.php:71
 msgid "Archives:"
-msgstr ""
+msgstr "Arxius:"
 
 #: library/extensions/post-header-extensions.php:76
 msgid "Daily Archives: %s"
-msgstr ""
+msgstr "Dia: %s"
 
 #: library/extensions/post-header-extensions.php:80
 msgid "Monthly Archives: %s"
-msgstr ""
+msgstr "Mes: %s"
 
 #: library/extensions/post-header-extensions.php:84
 msgid "Yearly Archives: %s"
-msgstr ""
+msgstr "Any: %s"
 
 #: library/extensions/post-header-extensions.php:124
 msgctxt "Default title for untitled posts"
@@ -384,73 +371,73 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:131
 msgid "Not Found"
-msgstr ""
+msgstr "No s'ha trobat"
 
 #: library/extensions/post-header-extensions.php:180
 msgid "By"
-msgstr ""
+msgstr "Per"
 
 #: library/extensions/post-header-extensions.php:206
 msgid "Published:"
-msgstr ""
+msgstr "Publicat:"
 
 #: library/extensions/widget-area-extensions.php:52
 msgid "Primary Aside"
-msgstr ""
+msgstr "Barra lateral principal"
 
 #: library/extensions/widget-area-extensions.php:54
 msgid "The primary widget area, most often used as a sidebar."
-msgstr ""
+msgstr "L'àrea de widgets principal, generalment utilitzada com a barra lateral."
 
 #: library/extensions/widget-area-extensions.php:65
 msgid "Secondary Aside"
-msgstr ""
+msgstr "Barra lateral secundària"
 
 #: library/extensions/widget-area-extensions.php:67
 msgid "The secondary widget area, most often used as a sidebar."
-msgstr ""
+msgstr "L'àrea de widgets secundària, generalment utilitzada com a barra lateral."
 
 #: library/extensions/widget-area-extensions.php:78
 msgid "1st Subsidiary Aside"
-msgstr ""
+msgstr "1r bloc secundari"
 
 #: library/extensions/widget-area-extensions.php:80
 msgid "The 1st widget area in the footer."
-msgstr ""
+msgstr "La 1a àrea de widgets en el peu de pàgina."
 
 #: library/extensions/widget-area-extensions.php:91
 msgid "2nd Subsidiary Aside"
-msgstr ""
+msgstr "2n bloc secundari"
 
 #: library/extensions/widget-area-extensions.php:93
 msgid "The 2nd widget area in the footer."
-msgstr ""
+msgstr "La 2a àrea de widgets en el peu de pàgina."
 
 #: library/extensions/widget-area-extensions.php:104
 msgid "3rd Subsidiary Aside"
-msgstr ""
+msgstr "3r bloc secundari"
 
 #: library/extensions/widget-area-extensions.php:106
 msgid "The 3rd widget area in the footer."
-msgstr ""
+msgstr "La 3a àrea de widgets en el peu de pàgina."
 
 #: template-parts/content/content-archives.php:13
 msgid "Archives by Category"
-msgstr ""
+msgstr "Arxius per Categoria"
 
 #: template-parts/content/content-archives.php:25
 msgid "Archives by Month"
-msgstr ""
+msgstr "Arxius per Mes"
 
 #: template-parts/content/content-attachment.php:32
 #: template-parts/content/content-single.php:35
 #: template-parts/content/loop.php:47
 msgid "Pages:"
-msgstr ""
+msgstr "Pàgines:"
 
 #: template-parts/content/content-author.php:39
 msgid "Email "
-msgstr ""
+msgstr "Email"
 
 #: template-parts/content/content-none.php:27
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -458,11 +445,11 @@ msgstr ""
 
 #: template-parts/content/content-none.php:33
 msgid "Apologies, but we were unable to find what you were looking for. Perhaps searching will help."
-msgstr ""
+msgstr "Disculpa les molèsties, però no hem pogut trobar el que buscaves. El cercador pot ser-te d'ajuda."
 
 #: template-parts/content/content-page.php:32
 msgid "Pages: "
-msgstr ""
+msgstr "Pàgines: "
 
 #: template-parts/navigation/nav-access.php:18
 msgctxt "Mobile navigation button"
@@ -479,17 +466,18 @@ msgstr ""
 #: template-parts/navigation/nav-content-after.php:53
 #: template-parts/navigation/nav-content-before.php:54
 msgid "Older posts"
-msgstr ""
+msgstr "Entrades més antigues"
 
 #: template-parts/navigation/nav-content-after.php:63
 #: template-parts/navigation/nav-content-before.php:64
 msgid "Newer posts"
-msgstr ""
+msgstr "Entrades més recents"
+
 #. Theme Name of the plugin/theme
 msgid "Deciduous"
 msgstr ""
 
-#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
 msgid "http://d.eciduo.us"
 msgstr ""
 
@@ -501,14 +489,10 @@ msgstr ""
 msgid "Gene Robinson"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://d.eciduo.us"
-msgstr ""
-
 #. Template Name of the plugin/theme
 msgid "Archives Page"
-msgstr ""
+msgstr "Pàgina d'Arxius"
 
 #. Template Name of the plugin/theme
 msgid "Full Width"
-msgstr ""
+msgstr "Amplada Completa"

@@ -32,6 +32,6 @@ add_action( 'after_switch_theme', 'deciduous_switch_theme' );
  * @return void
  */
 function deciduous_upgrade_notice() {
-	$message = sprintf( esc_html__( 'Deciduous requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'deciduous' ), $GLOBALS['wp_version'] );
+	$message = sprintf( esc_html_x( 'Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again.', '%1s and %2s represent a version number', 'deciduous' ), '4.5', $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }

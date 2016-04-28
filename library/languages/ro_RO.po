@@ -1,16 +1,29 @@
-# Copyright (C) 2016 Gene Robinson
-# This file is distributed under the GNU General Public License v2.0.
+# Translation of Deciduous in Romanian
+# This file is distributed under the same license as the Deciduous package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Deciduous 0.9.0-alpha\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Deciduous\n"
-"POT-Creation-Date: 2016-04-28 23:02:50+00:00\n"
+"PO-Revision-Date: 2016-04-28 18:02:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.0.1\n"
+"Project-Id-Version: Deciduous\n"
+
+#: library/extensions/backwards-compatibility.php:35
+msgctxt "%1s and %2s represent a version number"
+msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%s repestents a link to WordPress.org"
+msgid "Powered by %s"
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%1s and %2s are an <a> tag"
+msgid "Built with the %1sDeciduous Theme%2s"
+msgstr ""
 
 #: comments.php:24
 msgid "Please do not load this page directly."
@@ -18,7 +31,7 @@ msgstr ""
 
 #: comments.php:34
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
+msgstr "Acest articol este protejat cu parolă. Introduceţi parola pentru a vedea comentariile."
 
 #: comments.php:113
 msgid "Trackbacks"
@@ -35,12 +48,7 @@ msgstr ""
 
 #: header.php:76
 msgid "Skip to content"
-msgstr ""
-
-#: library/extensions/backwards-compatibility.php:35
-msgctxt "%1s and %2s represent a version number"
-msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
-msgstr ""
+msgstr "Săriţi către conţinut"
 
 #: library/extensions/customizer.php:52
 msgid "Layout"
@@ -56,7 +64,7 @@ msgstr ""
 
 #: library/extensions/customizer.php:90
 msgid "Info on Author Page"
-msgstr ""
+msgstr "Informaţii pe pagina de autor."
 
 #: library/extensions/customizer.php:91
 msgctxt "%1$s and %2$s are <a> tags"
@@ -81,25 +89,15 @@ msgstr ""
 
 #: library/extensions/helpers.php:33
 msgid "To search, type and hit enter"
-msgstr ""
+msgstr "Pentru căutare, scrieţi şi apăsaţi enter"
 
 #: library/extensions/helpers.php:39
 #: library/extensions/widget-area-extensions.php:280
 msgid "Search"
-msgstr ""
+msgstr "Caută"
 
 #: library/extensions/helpers.php:117
 msgid "https://wordpress.org/"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%s repestents a link to WordPress.org"
-msgid "Powered by %s"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%1s and %2s are an <a> tag"
-msgid "Built with the %1sDeciduous Theme%2s"
 msgstr ""
 
 #: library/extensions/helpers.php:140
@@ -120,7 +118,7 @@ msgstr ""
 
 #: library/extensions/helpers.php:248 library/extensions/helpers.php:267
 msgid "There is no excerpt because this is a protected post."
-msgstr ""
+msgstr "Rezumatul nu este disponibil pentru că e vorba de un articol protejat."
 
 #: library/extensions/post-comments-extensions.php:14
 msgctxt "Posted {$date} at {$time}"
@@ -132,14 +130,13 @@ msgid "Permalink"
 msgstr ""
 
 #. translators: post edit link
-
 #: library/extensions/post-comments-extensions.php:32
 #: library/extensions/post-comments-extensions.php:128
 #: library/extensions/post-footer-extensions.php:95
 #: library/extensions/post-header-extensions.php:241
 #: template-page-archives.php:56 template-parts/content/content-page.php:34
 msgid "Edit"
-msgstr ""
+msgstr "Editare"
 
 #: library/extensions/post-comments-extensions.php:73
 msgid "Your comment is awaiting moderation"
@@ -147,11 +144,11 @@ msgstr ""
 
 #: library/extensions/post-comments-extensions.php:88
 msgid "Reply"
-msgstr ""
+msgstr "Răspunde"
 
 #: library/extensions/post-comments-extensions.php:89
 msgid "Log in to reply."
-msgstr ""
+msgstr "Autentificaţi-vă pentru a răspunde."
 
 #: library/extensions/post-comments-extensions.php:121
 msgctxt "By {$authorlink} on {$date} at {$time}"
@@ -172,19 +169,16 @@ msgid "Comments"
 msgstr ""
 
 #. translators: comment form title
-
 #: library/extensions/post-comments-extensions.php:234
 msgid "Post a Comment"
-msgstr ""
+msgstr "Publicaţi un comentariu"
 
 #. translators: comment reply form title, %s is author of comment
-
 #: library/extensions/post-comments-extensions.php:246
 msgid "Post a Reply to %s"
-msgstr ""
+msgstr "Publicaţi un raspuns la %s"
 
 #. translators: label for comment form textarea
-
 #: library/extensions/post-comments-extensions.php:258
 msgctxt "noun"
 msgid "Comment"
@@ -195,14 +189,13 @@ msgid "Cancel reply"
 msgstr ""
 
 #. translators: text of comment button
-
 #: library/extensions/post-comments-extensions.php:281
 msgid "Post Comment"
-msgstr ""
+msgstr "Publicaţi comentariul"
 
 #: library/extensions/post-comments-extensions.php:308
 msgid "Name"
-msgstr ""
+msgstr "Nume"
 
 #: library/extensions/post-comments-extensions.php:308
 #: library/extensions/post-comments-extensions.php:309
@@ -212,11 +205,11 @@ msgstr ""
 
 #: library/extensions/post-comments-extensions.php:309
 msgid "Email"
-msgstr ""
+msgstr "Adresă de e-mail"
 
 #: library/extensions/post-comments-extensions.php:310
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <em> tags for emphasis on never"
@@ -254,13 +247,11 @@ msgid "Permalink to %s"
 msgstr ""
 
 #. translators: %s is right angle brackets
-
 #: library/extensions/post-content-extensions.php:103
 msgid "Read More %s"
 msgstr ""
 
 #. translators: %s is custom post type singular name, wrapped in link tags
-
 #: library/extensions/post-footer-extensions.php:40
 msgid "Browse the %s archive."
 msgstr ""
@@ -271,19 +262,16 @@ msgid "Bookmark the %1$spermalink%2$s."
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:183
 msgid "This entry was posted in %s"
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:200
 msgid "Also posted in %s"
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:209
 msgid "Posted in %s"
 msgstr ""
@@ -302,23 +290,23 @@ msgstr ""
 
 #: library/extensions/post-footer-extensions.php:246
 msgid "Tagged"
-msgstr ""
+msgstr "Etichetat"
 
 #. translators: number of comments and trackbacks
-
 #: library/extensions/post-footer-extensions.php:274
 msgid "%s Response"
 msgid_plural "%s Responses"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: library/extensions/post-footer-extensions.php:281
 msgid "Leave a comment"
-msgstr ""
+msgstr "Lăsaţi un comentariu"
 
 #: library/extensions/post-footer-extensions.php:287
 msgid "Comments closed"
-msgstr ""
+msgstr "Comentariile nu sunt acceptate."
 
 #: library/extensions/post-footer-extensions.php:303
 msgctxt "1s and 2s are the a href link wrappers, do not reverse them. 3s is trackback url."
@@ -328,7 +316,7 @@ msgstr ""
 #: library/extensions/post-footer-extensions.php:309
 #: library/extensions/post-footer-extensions.php:318
 msgid "Trackback URL"
-msgstr ""
+msgstr "Adresa Ping-ului"
 
 #: library/extensions/post-footer-extensions.php:315
 msgctxt "%s is trackback url, wrapped in link tags"
@@ -350,15 +338,15 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:40
 msgid "Category Archives:"
-msgstr ""
+msgstr "Arhivele categoriei:"
 
 #: library/extensions/post-header-extensions.php:50
 msgid "Search Results for:"
-msgstr ""
+msgstr "Rezultatele căutării pentru:"
 
 #: library/extensions/post-header-extensions.php:55
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Arhivele etichetei:"
 
 #: library/extensions/post-header-extensions.php:64
 #: library/extensions/post-header-extensions.php:71
@@ -384,7 +372,7 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:131
 msgid "Not Found"
-msgstr ""
+msgstr "Nu s-a găsit"
 
 #: library/extensions/post-header-extensions.php:180
 msgid "By"
@@ -400,7 +388,7 @@ msgstr ""
 
 #: library/extensions/widget-area-extensions.php:54
 msgid "The primary widget area, most often used as a sidebar."
-msgstr ""
+msgstr "Zona principală de widget-uri, cel mai adesea folosită ca şi bară laterală."
 
 #: library/extensions/widget-area-extensions.php:65
 msgid "Secondary Aside"
@@ -408,7 +396,7 @@ msgstr ""
 
 #: library/extensions/widget-area-extensions.php:67
 msgid "The secondary widget area, most often used as a sidebar."
-msgstr ""
+msgstr "Zona secundară de widget-uri, cel mai adesea folosită ca şi bară laterală."
 
 #: library/extensions/widget-area-extensions.php:78
 msgid "1st Subsidiary Aside"
@@ -416,7 +404,7 @@ msgstr ""
 
 #: library/extensions/widget-area-extensions.php:80
 msgid "The 1st widget area in the footer."
-msgstr ""
+msgstr "Prima zonă de widget-uri din subsol."
 
 #: library/extensions/widget-area-extensions.php:91
 msgid "2nd Subsidiary Aside"
@@ -424,7 +412,7 @@ msgstr ""
 
 #: library/extensions/widget-area-extensions.php:93
 msgid "The 2nd widget area in the footer."
-msgstr ""
+msgstr "A doua zonă de widget-uri din subsol."
 
 #: library/extensions/widget-area-extensions.php:104
 msgid "3rd Subsidiary Aside"
@@ -432,25 +420,25 @@ msgstr ""
 
 #: library/extensions/widget-area-extensions.php:106
 msgid "The 3rd widget area in the footer."
-msgstr ""
+msgstr "A treia zonă de widget-uri din subsol."
 
 #: template-parts/content/content-archives.php:13
 msgid "Archives by Category"
-msgstr ""
+msgstr "Arhive dupa categorii"
 
 #: template-parts/content/content-archives.php:25
 msgid "Archives by Month"
-msgstr ""
+msgstr "Arhive dupa lună"
 
 #: template-parts/content/content-attachment.php:32
 #: template-parts/content/content-single.php:35
 #: template-parts/content/loop.php:47
 msgid "Pages:"
-msgstr ""
+msgstr "Pagini:"
 
 #: template-parts/content/content-author.php:39
 msgid "Email "
-msgstr ""
+msgstr "E-mail"
 
 #: template-parts/content/content-none.php:27
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -462,7 +450,7 @@ msgstr ""
 
 #: template-parts/content/content-page.php:32
 msgid "Pages: "
-msgstr ""
+msgstr "Pagini: "
 
 #: template-parts/navigation/nav-access.php:18
 msgctxt "Mobile navigation button"
@@ -485,11 +473,12 @@ msgstr ""
 #: template-parts/navigation/nav-content-before.php:64
 msgid "Newer posts"
 msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Deciduous"
 msgstr ""
 
-#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
 msgid "http://d.eciduo.us"
 msgstr ""
 
@@ -499,10 +488,6 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Gene Robinson"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://d.eciduo.us"
 msgstr ""
 
 #. Template Name of the plugin/theme

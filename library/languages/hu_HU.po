@@ -1,16 +1,29 @@
-# Copyright (C) 2016 Gene Robinson
-# This file is distributed under the GNU General Public License v2.0.
+# Translation of Deciduous in Hungarian
+# This file is distributed under the same license as the Deciduous package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Deciduous 0.9.0-alpha\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Deciduous\n"
-"POT-Creation-Date: 2016-04-28 23:02:50+00:00\n"
+"PO-Revision-Date: 2016-04-28 18:25:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.0.1\n"
+"Project-Id-Version: Deciduous\n"
+
+#: library/extensions/backwards-compatibility.php:35
+msgctxt "%1s and %2s represent a version number"
+msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%s repestents a link to WordPress.org"
+msgid "Powered by %s"
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%1s and %2s are an <a> tag"
+msgid "Built with the %1sDeciduous Theme%2s"
+msgstr ""
 
 #: comments.php:24
 msgid "Please do not load this page directly."
@@ -18,7 +31,7 @@ msgstr ""
 
 #: comments.php:34
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
+msgstr "Ez a bejegyzés jelszóval védett. Adja meg a jelszót, hogy megtekinthesse a hozzászólásokat."
 
 #: comments.php:113
 msgid "Trackbacks"
@@ -35,11 +48,6 @@ msgstr ""
 
 #: header.php:76
 msgid "Skip to content"
-msgstr ""
-
-#: library/extensions/backwards-compatibility.php:35
-msgctxt "%1s and %2s represent a version number"
-msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
 msgstr ""
 
 #: library/extensions/customizer.php:52
@@ -92,16 +100,6 @@ msgstr ""
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: library/extensions/helpers.php:117
-msgctxt "%s repestents a link to WordPress.org"
-msgid "Powered by %s"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%1s and %2s are an <a> tag"
-msgid "Built with the %1sDeciduous Theme%2s"
-msgstr ""
-
 #: library/extensions/helpers.php:140
 msgid "Left Sidebar"
 msgstr ""
@@ -132,7 +130,6 @@ msgid "Permalink"
 msgstr ""
 
 #. translators: post edit link
-
 #: library/extensions/post-comments-extensions.php:32
 #: library/extensions/post-comments-extensions.php:128
 #: library/extensions/post-footer-extensions.php:95
@@ -169,54 +166,50 @@ msgstr ""
 
 #: library/extensions/post-comments-extensions.php:207
 msgid "Comments"
-msgstr ""
+msgstr "Hozzászólások"
 
 #. translators: comment form title
-
 #: library/extensions/post-comments-extensions.php:234
 msgid "Post a Comment"
-msgstr ""
+msgstr "Új hozzászólás"
 
 #. translators: comment reply form title, %s is author of comment
-
 #: library/extensions/post-comments-extensions.php:246
 msgid "Post a Reply to %s"
 msgstr ""
 
 #. translators: label for comment form textarea
-
 #: library/extensions/post-comments-extensions.php:258
 msgctxt "noun"
 msgid "Comment"
-msgstr ""
+msgstr "Hozzászólás"
 
 #: library/extensions/post-comments-extensions.php:269
 msgid "Cancel reply"
 msgstr ""
 
 #. translators: text of comment button
-
 #: library/extensions/post-comments-extensions.php:281
 msgid "Post Comment"
 msgstr ""
 
 #: library/extensions/post-comments-extensions.php:308
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 #: library/extensions/post-comments-extensions.php:308
 #: library/extensions/post-comments-extensions.php:309
 msgctxt "denotes required field"
 msgid "*"
-msgstr ""
+msgstr "kötelezően kitöltendő mező"
 
 #: library/extensions/post-comments-extensions.php:309
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: library/extensions/post-comments-extensions.php:310
 msgid "Website"
-msgstr ""
+msgstr "Weboldal"
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <em> tags for emphasis on never"
@@ -234,15 +227,15 @@ msgstr ""
 
 #: library/extensions/post-comments-extensions.php:320
 msgid "Log in"
-msgstr ""
+msgstr "Belépés"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Logged in as %s"
-msgstr ""
+msgstr "Belépés mint %s"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Log out?"
-msgstr ""
+msgstr "Kilépés?"
 
 #: library/extensions/post-comments-extensions.php:324
 msgctxt "%$1s and %$2s are <abbr> tags"
@@ -254,13 +247,11 @@ msgid "Permalink to %s"
 msgstr ""
 
 #. translators: %s is right angle brackets
-
 #: library/extensions/post-content-extensions.php:103
 msgid "Read More %s"
 msgstr ""
 
 #. translators: %s is custom post type singular name, wrapped in link tags
-
 #: library/extensions/post-footer-extensions.php:40
 msgid "Browse the %s archive."
 msgstr ""
@@ -271,19 +262,16 @@ msgid "Bookmark the %1$spermalink%2$s."
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:183
 msgid "This entry was posted in %s"
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:200
 msgid "Also posted in %s"
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:209
 msgid "Posted in %s"
 msgstr ""
@@ -305,7 +293,6 @@ msgid "Tagged"
 msgstr ""
 
 #. translators: number of comments and trackbacks
-
 #: library/extensions/post-footer-extensions.php:274
 msgid "%s Response"
 msgid_plural "%s Responses"
@@ -346,15 +333,15 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:35
 msgid "Author Archives:"
-msgstr ""
+msgstr "Szerző Archívumok:"
 
 #: library/extensions/post-header-extensions.php:40
 msgid "Category Archives:"
-msgstr ""
+msgstr "Kategória Archívumok:"
 
 #: library/extensions/post-header-extensions.php:50
 msgid "Search Results for:"
-msgstr ""
+msgstr "Keresési találatok a következőre:"
 
 #: library/extensions/post-header-extensions.php:55
 msgid "Tag Archives:"
@@ -450,7 +437,7 @@ msgstr ""
 
 #: template-parts/content/content-author.php:39
 msgid "Email "
-msgstr ""
+msgstr "Email"
 
 #: template-parts/content/content-none.php:27
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -485,11 +472,12 @@ msgstr ""
 #: template-parts/navigation/nav-content-before.php:64
 msgid "Newer posts"
 msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Deciduous"
 msgstr ""
 
-#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
 msgid "http://d.eciduo.us"
 msgstr ""
 
@@ -499,10 +487,6 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Gene Robinson"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://d.eciduo.us"
 msgstr ""
 
 #. Template Name of the plugin/theme
