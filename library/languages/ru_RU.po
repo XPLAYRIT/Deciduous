@@ -1,46 +1,54 @@
-# Copyright (C) 2016 Gene Robinson
-# This file is distributed under the GNU General Public License v2.0.
+# Translation of Deciduous in Russian
+# This file is distributed under the same license as the Deciduous package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Deciduous 0.9.0-alpha\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Deciduous\n"
-"POT-Creation-Date: 2016-04-28 23:02:50+00:00\n"
+"PO-Revision-Date: 2016-04-28 18:21:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-
-#: comments.php:24
-msgid "Please do not load this page directly."
-msgstr ""
-
-#: comments.php:34
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: comments.php:113
-msgid "Trackbacks"
-msgstr ""
-
-#: comments.php:113
-msgctxt "%1$ and %2$s are <span> tags"
-msgid "%1$sOne%2$s Trackback"
-msgstr ""
-
-#: functions.php:150
-msgid "Primary Menu"
-msgstr ""
-
-#: header.php:76
-msgid "Skip to content"
-msgstr ""
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.0.1\n"
+"Project-Id-Version: Deciduous\n"
 
 #: library/extensions/backwards-compatibility.php:35
 msgctxt "%1s and %2s represent a version number"
 msgid "Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again."
 msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%s repestents a link to WordPress.org"
+msgid "Powered by %s"
+msgstr ""
+
+#: library/extensions/helpers.php:117
+msgctxt "%1s and %2s are an <a> tag"
+msgid "Built with the %1sDeciduous Theme%2s"
+msgstr ""
+
+#: comments.php:24
+msgid "Please do not load this page directly."
+msgstr "Пожалуйста, не открывайте данную страницу по прямой ссылке."
+
+#: comments.php:34
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Эта публикация защищена паролем. Введите пароль чтобы увидеть комментарии."
+
+#: comments.php:113
+msgid "Trackbacks"
+msgstr "Обратные ссылки"
+
+#: comments.php:113
+msgctxt "%1$ and %2$s are <span> tags"
+msgid "%1$sOne%2$s Trackback"
+msgstr "%1$sОдна%2$s обратная ссылка"
+
+#: functions.php:150
+msgid "Primary Menu"
+msgstr "Основное меню"
+
+#: header.php:76
+msgid "Skip to content"
+msgstr "Перейти к содержимому"
 
 #: library/extensions/customizer.php:52
 msgid "Layout"
@@ -69,7 +77,7 @@ msgstr ""
 
 #: library/extensions/customizer.php:122
 msgid "Footer"
-msgstr ""
+msgstr "Нижний колонтитул"
 
 #: library/extensions/customizer.php:123
 msgid "You can use HTML and shortcodes in your footer text."
@@ -77,7 +85,7 @@ msgstr ""
 
 #: library/extensions/customizer.php:138
 msgid "Footer text"
-msgstr ""
+msgstr "Текст нижнего колонтитула"
 
 #: library/extensions/helpers.php:33
 msgid "To search, type and hit enter"
@@ -86,20 +94,10 @@ msgstr ""
 #: library/extensions/helpers.php:39
 #: library/extensions/widget-area-extensions.php:280
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: library/extensions/helpers.php:117
 msgid "https://wordpress.org/"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%s repestents a link to WordPress.org"
-msgid "Powered by %s"
-msgstr ""
-
-#: library/extensions/helpers.php:117
-msgctxt "%1s and %2s are an <a> tag"
-msgid "Built with the %1sDeciduous Theme%2s"
 msgstr ""
 
 #: library/extensions/helpers.php:140
@@ -112,11 +110,11 @@ msgstr ""
 
 #: library/extensions/helpers.php:148
 msgid "Three columns"
-msgstr ""
+msgstr "Три колонки"
 
 #: library/extensions/helpers.php:152
 msgid "Full width"
-msgstr ""
+msgstr "Во всю ширину"
 
 #: library/extensions/helpers.php:248 library/extensions/helpers.php:267
 msgid "There is no excerpt because this is a protected post."
@@ -132,14 +130,13 @@ msgid "Permalink"
 msgstr ""
 
 #. translators: post edit link
-
 #: library/extensions/post-comments-extensions.php:32
 #: library/extensions/post-comments-extensions.php:128
 #: library/extensions/post-footer-extensions.php:95
 #: library/extensions/post-header-extensions.php:241
 #: template-page-archives.php:56 template-parts/content/content-page.php:34
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: library/extensions/post-comments-extensions.php:73
 msgid "Your comment is awaiting moderation"
@@ -147,7 +144,7 @@ msgstr ""
 
 #: library/extensions/post-comments-extensions.php:88
 msgid "Reply"
-msgstr ""
+msgstr "Ответить"
 
 #: library/extensions/post-comments-extensions.php:89
 msgid "Log in to reply."
@@ -165,102 +162,96 @@ msgstr ""
 #: library/extensions/post-comments-extensions.php:188
 msgctxt "One Comment, where %$1s and %$2s are <span> tags"
 msgid "%1$sOne%2$s Comment"
-msgstr ""
+msgstr "%1$sОдин%2$s Комментарий"
 
 #: library/extensions/post-comments-extensions.php:207
 msgid "Comments"
-msgstr ""
+msgstr "Комментарии"
 
 #. translators: comment form title
-
 #: library/extensions/post-comments-extensions.php:234
 msgid "Post a Comment"
-msgstr ""
+msgstr "Оставить комментарий"
 
 #. translators: comment reply form title, %s is author of comment
-
 #: library/extensions/post-comments-extensions.php:246
 msgid "Post a Reply to %s"
-msgstr ""
+msgstr "Написать ответ %s"
 
 #. translators: label for comment form textarea
-
 #: library/extensions/post-comments-extensions.php:258
 msgctxt "noun"
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: library/extensions/post-comments-extensions.php:269
 msgid "Cancel reply"
-msgstr ""
+msgstr "Отменить ответ"
 
 #. translators: text of comment button
-
 #: library/extensions/post-comments-extensions.php:281
 msgid "Post Comment"
-msgstr ""
+msgstr "Оставить комментарий"
 
 #: library/extensions/post-comments-extensions.php:308
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: library/extensions/post-comments-extensions.php:308
 #: library/extensions/post-comments-extensions.php:309
 msgctxt "denotes required field"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: library/extensions/post-comments-extensions.php:309
 msgid "Email"
-msgstr ""
+msgstr "e-почта"
 
 #: library/extensions/post-comments-extensions.php:310
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <em> tags for emphasis on never"
 msgid "Your email is %1$snever%2$s published nor shared."
-msgstr ""
+msgstr "Ваш адрес e-почты %1$sникогда%2$s не публиковался и не сообщался."
 
 #: library/extensions/post-comments-extensions.php:318
 msgctxt "%$1s and %$2s are <span> tags"
 msgid "Required fields are marked %1$s*%2$s"
-msgstr ""
+msgstr "Обязательные поля к заполнению отмечены%1$s*%2$s"
 
 #: library/extensions/post-comments-extensions.php:320
 msgid "You must be %1$slogged in%2$s to post a comment."
-msgstr ""
+msgstr "Чтобы оставлять комментарии вам необходимо %1$sавторизоваться%2$s."
 
 #: library/extensions/post-comments-extensions.php:320
 msgid "Log in"
-msgstr ""
+msgstr "Войти"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Logged in as %s"
-msgstr ""
+msgstr "Вошли как %s"
 
 #: library/extensions/post-comments-extensions.php:322
 msgid "Log out?"
-msgstr ""
+msgstr "Выйти?"
 
 #: library/extensions/post-comments-extensions.php:324
 msgctxt "%$1s and %$2s are <abbr> tags"
 msgid "You may use these %1$sHTML%2$s tags and attributes:"
-msgstr ""
+msgstr "Вы можете использовать следующие %1$sHTML%2$s тэги и атрибуты:"
 
 #: library/extensions/post-content-extensions.php:82
 msgid "Permalink to %s"
 msgstr ""
 
 #. translators: %s is right angle brackets
-
 #: library/extensions/post-content-extensions.php:103
 msgid "Read More %s"
 msgstr ""
 
 #. translators: %s is custom post type singular name, wrapped in link tags
-
 #: library/extensions/post-footer-extensions.php:40
 msgid "Browse the %s archive."
 msgstr ""
@@ -271,19 +262,16 @@ msgid "Bookmark the %1$spermalink%2$s."
 msgstr ""
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:183
 msgid "This entry was posted in %s"
-msgstr ""
+msgstr "Эта запись была опубликована в %s"
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:200
 msgid "Also posted in %s"
-msgstr ""
+msgstr "Так же опубликована в %s"
 
 #. translators: %s is postfooter categories
-
 #: library/extensions/post-footer-extensions.php:209
 msgid "Posted in %s"
 msgstr ""
@@ -302,23 +290,23 @@ msgstr ""
 
 #: library/extensions/post-footer-extensions.php:246
 msgid "Tagged"
-msgstr ""
+msgstr "Теги"
 
 #. translators: number of comments and trackbacks
-
 #: library/extensions/post-footer-extensions.php:274
 msgid "%s Response"
 msgid_plural "%s Responses"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: library/extensions/post-footer-extensions.php:281
 msgid "Leave a comment"
-msgstr ""
+msgstr "Оставить комментарий"
 
 #: library/extensions/post-footer-extensions.php:287
 msgid "Comments closed"
-msgstr ""
+msgstr "Комментирование закрыто"
 
 #: library/extensions/post-footer-extensions.php:303
 msgctxt "1s and 2s are the a href link wrappers, do not reverse them. 3s is trackback url."
@@ -328,7 +316,7 @@ msgstr ""
 #: library/extensions/post-footer-extensions.php:309
 #: library/extensions/post-footer-extensions.php:318
 msgid "Trackback URL"
-msgstr ""
+msgstr "Trackback URL"
 
 #: library/extensions/post-footer-extensions.php:315
 msgctxt "%s is trackback url, wrapped in link tags"
@@ -346,45 +334,45 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:35
 msgid "Author Archives:"
-msgstr ""
+msgstr "Архив автора:"
 
 #: library/extensions/post-header-extensions.php:40
 msgid "Category Archives:"
-msgstr ""
+msgstr "Архив категории:"
 
 #: library/extensions/post-header-extensions.php:50
 msgid "Search Results for:"
-msgstr ""
+msgstr "Результаты поиска по запросу:"
 
 #: library/extensions/post-header-extensions.php:55
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Архивы тэгов:"
 
 #: library/extensions/post-header-extensions.php:64
 #: library/extensions/post-header-extensions.php:71
 msgid "Archives:"
-msgstr ""
+msgstr "Архивы:"
 
 #: library/extensions/post-header-extensions.php:76
 msgid "Daily Archives: %s"
-msgstr ""
+msgstr "Ежедневные архивы: %s"
 
 #: library/extensions/post-header-extensions.php:80
 msgid "Monthly Archives: %s"
-msgstr ""
+msgstr "Архивы по месяцам: %s"
 
 #: library/extensions/post-header-extensions.php:84
 msgid "Yearly Archives: %s"
-msgstr ""
+msgstr "Архивы по годам: %s"
 
 #: library/extensions/post-header-extensions.php:124
 msgctxt "Default title for untitled posts"
 msgid "(Untitled)"
-msgstr ""
+msgstr "(Без названия)"
 
 #: library/extensions/post-header-extensions.php:131
 msgid "Not Found"
-msgstr ""
+msgstr "Не найдено"
 
 #: library/extensions/post-header-extensions.php:180
 msgid "By"
@@ -392,7 +380,7 @@ msgstr ""
 
 #: library/extensions/post-header-extensions.php:206
 msgid "Published:"
-msgstr ""
+msgstr "Автор публикации:"
 
 #: library/extensions/widget-area-extensions.php:52
 msgid "Primary Aside"
@@ -436,21 +424,21 @@ msgstr ""
 
 #: template-parts/content/content-archives.php:13
 msgid "Archives by Category"
-msgstr ""
+msgstr "Архивы категории"
 
 #: template-parts/content/content-archives.php:25
 msgid "Archives by Month"
-msgstr ""
+msgstr "Архивы по месяцам"
 
 #: template-parts/content/content-attachment.php:32
 #: template-parts/content/content-single.php:35
 #: template-parts/content/loop.php:47
 msgid "Pages:"
-msgstr ""
+msgstr "Страницы:"
 
 #: template-parts/content/content-author.php:39
 msgid "Email "
-msgstr ""
+msgstr "E-mail "
 
 #: template-parts/content/content-none.php:27
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -462,12 +450,12 @@ msgstr ""
 
 #: template-parts/content/content-page.php:32
 msgid "Pages: "
-msgstr ""
+msgstr "Страницы:"
 
 #: template-parts/navigation/nav-access.php:18
 msgctxt "Mobile navigation button"
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: template-parts/navigation/nav-content-after.php:16
 #: template-parts/navigation/nav-content-after.php:39
@@ -479,17 +467,18 @@ msgstr ""
 #: template-parts/navigation/nav-content-after.php:53
 #: template-parts/navigation/nav-content-before.php:54
 msgid "Older posts"
-msgstr ""
+msgstr "Ранние записи"
 
 #: template-parts/navigation/nav-content-after.php:63
 #: template-parts/navigation/nav-content-before.php:64
 msgid "Newer posts"
-msgstr ""
+msgstr "Новые записи"
+
 #. Theme Name of the plugin/theme
 msgid "Deciduous"
 msgstr ""
 
-#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
 msgid "http://d.eciduo.us"
 msgstr ""
 
@@ -501,14 +490,10 @@ msgstr ""
 msgid "Gene Robinson"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://d.eciduo.us"
-msgstr ""
-
 #. Template Name of the plugin/theme
 msgid "Archives Page"
-msgstr ""
+msgstr "Архив"
 
 #. Template Name of the plugin/theme
 msgid "Full Width"
-msgstr ""
+msgstr "Полный размер"

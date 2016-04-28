@@ -112,10 +112,14 @@ function deciduous_get_theme_opt( $opt_key, $echo = false ) {
  *
  */
 function deciduous_default_opt() {
+
+
+	$footer_text = '<a href="' . esc_url( __( 'https://wordpress.org/', 'deciduous' ) ) . '">' . sprintf( _x( 'Powered by %s', '%s repestents a link to WordPress.org', 'deciduous' ), 'WordPress' ) . '.</a>' . sprintf( _x( 'Built with the %1sDeciduous Theme%2s','%1s and %2s are an <a> tag', 'deciduous' ), '<a href="http://d.eciduo.us>', '</a>.' );
+	
 	$deciduous_default_opt = array(
 		'index_insert' 	=> 2,
 		'author_info'  	=> 0, // 0 = not checked 1 = checked
-		'footer_txt' 	=> 'Powered by WordPress. Built on the Deciduous Theme.',
+		'footer_txt' 	=> $footer_text,
 		'layout'        => deciduous_default_theme_layout()
 	);
 
