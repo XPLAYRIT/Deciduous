@@ -6,22 +6,6 @@
  * @subpackage HeaderExtensions
  */
 
-function deciduous_custom_header_style() {
-if ( get_header_image() ) :
-?>
-<style type="text/css" id="deciduous-header-image-style">
-.branding {
-    padding-bottom: 2em;
-    padding-top: 3em;
-}
-
-.header-image {
-	margin-top: 1em;
-}
-</style>
-<?php
-endif;
-}
 
 /**
 * Display the html tag and attributes
@@ -252,7 +236,31 @@ function deciduous_create_stylesheet() {
 add_action('wp_enqueue_scripts','deciduous_create_stylesheet');
 
 
+if ( ! function_exists( 'deciduous_p_custom_header_style') ) :
+/**
+ * Pluggable Function for outputting header styles
+ * into <head>
+ *
+ * This is the callback function for add_theme_support( 'custom-header') found in functions.php
+ */
+function deciduous_p_custom_header_style() {
+	if ( get_header_image() ) :
+?>
+<style type="text/css" id="deciduous-header-image-style">
+.branding {
+    padding-bottom: 2em;
+    padding-top: 3em;
+}
 
+.header-image {
+	margin-top: 1em;
+}
+</style>
+<?php
+	endif;
+}
+
+endif;
 
 /**
  * Adds comment reply and navigation menu scripts to the head of the document.
