@@ -24,11 +24,22 @@
 				     * 
 				     * Filter: deciduous_f_header_image_attributes
 				     * For setting custom attributes for the img tag
+				     *
+				     * I am passing a blank space as the srcset value in customizer previews
+				     * because Safari blows chunks with srcset in the customizer preview iframe
+				     * and it disappears the header image upon update.
 				     * 
 				     * @link https://developer.wordpress.org/reference/functions/get_header_image_tag/
 				     */
+				    if( is_customize_preview() ) {
+						$deciduous_header_image_attributes =	array('srcset' => ' ' );
+					} else {
+						$deciduous_header_image_attributes =	array();
+					}
+					
+					// Begin header image check
 					if (  !empty( $deciduous_header_image = get_header_image_tag( 
-						apply_filters ( 'deciduous_f_header_image_attributes' , array() )
+						apply_filters ( 'deciduous_f_header_image_attributes' , $deciduous_header_image_attributes )
 					 ) ) ) : 
 				?>
 				
