@@ -3,7 +3,7 @@ Contributors: Gene Robinson(emhr)
 Tags: white, three-columns, two-columns, responsive-layout, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats, translation-ready, full-width-template
 Requires at least: 3.5
 Tested up to: 4.5.1
-Stable tag: 0.9.0-alpha
+Stable tag: 0.9.0
 
 == Description ==
 
