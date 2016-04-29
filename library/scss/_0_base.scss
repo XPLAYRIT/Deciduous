@@ -72,10 +72,13 @@ $susy: (
     output: float,
     gutter-position: inside,
     global-box-sizing: (border-box),
-	debug: (
-		image: show,
-		color: rgba(#66f, .25),
-		output: overlay,
-		toggle: bottom right,
-    ),
+	
+	// uncomment the debug array below to get grid overlay toggle in lower right of screen
+	
+	//debug: (
+	//	image: show,
+	//	color: rgba(#66f, .25),
+	//	output: overlay,
+	//	toggle: bottom right,
+    //),
 );

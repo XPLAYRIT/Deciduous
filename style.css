@@ -1437,29 +1437,8 @@ img.wp-smiley,
   padding: 0;
 }
 
-/* Content Asides */
-.site-content .aside {
-  margin-bottom: 4.6em;
-}
-
-.site-content .widgettitle {
-  margin-bottom: .5em;
-}
-
-.site-content .aside ul {
-  padding: 0 1.250em;
-}
-
-.site-content .aside ul ul {
-  padding: 0;
-}
-
-.index-insert {
-  margin-top: -0.2em;
-}
-
-.page-bottom {
-  margin-top: .5em;
+.primary-aside {
+  background: #eee;
 }
 
 /* Footer Asides */
@@ -1548,8 +1527,9 @@ img.wp-smiley,
     float: right;
   }
   .right-sidebar .primary-aside {
+    margin-top: .8em;
     margin-bottom: 0.7em;
-    padding-top: 0.2em;
+    padding: 1.2em 1.5em 0;
   }
   .right-sidebar .secondary-aside {
     clear: right;
@@ -1567,8 +1547,9 @@ img.wp-smiley,
     float: left;
   }
   .left-sidebar .primary-aside {
+    margin-top: .8em;
     margin-bottom: 0.7em;
-    padding-top: 0.2em;
+    padding: 1.2em 1.5em 0;
   }
   .left-sidebar .secondary-aside {
     clear: left;
