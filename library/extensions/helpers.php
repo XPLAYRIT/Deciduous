@@ -114,7 +114,7 @@ function deciduous_get_theme_opt( $opt_key, $echo = false ) {
 function deciduous_default_opt() {
 
 
-	$footer_text = '<a href="' . esc_url( __( 'https://wordpress.org/', 'deciduous' ) ) . '">' . sprintf( _x( 'Powered by %s', '%s repestents a link to WordPress.org', 'deciduous' ), 'WordPress' ) . '.</a>' . sprintf( _x( 'Built with the %1sDeciduous Theme%2s','%1s and %2s are an <a> tag', 'deciduous' ), '<a href="http://d.eciduo.us>', '</a>.' );
+	$footer_text = sprintf( __( 'Powered by %s', 'deciduous' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'deciduous' ) ) . '">WordPress' ) . '</a>. ' . sprintf( __( 'Built with the %sDeciduous Theme%s', 'deciduous' ), '<a href="http://d.eciduo.us">', '</a>.' );
 	
 	$deciduous_default_opt = array(
 		'index_insert' 	=> 2,
