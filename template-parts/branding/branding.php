@@ -17,21 +17,24 @@
 
 				<<?php echo( $tag ) ?> id="blog-description" class="tagline"><?php bloginfo( 'description', 'display' ) ?></<?php echo( $tag ) ?>>
 				
-				<?php if (  $deciduous_header_image = get_header_image() ) : ?>
-				<?php
-					/**
-					 * Filter the default Deciduous custom header sizes attribute.
-					 *
-					 * @todo recalc how the $custom_header_sizes are sized since this came from 2016theme
-					 * @param string $custom_header_sizes sizes attribute
-					 * for Custom Header. Default '(max-width: 709px) 85vw,
-					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-					 */
-					$custom_header_sizes = apply_filters( 'deciduous_header_image_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 960px) 91vw, 960px' );
+				<?php 
+				    /**
+				     * We are storing the header image tag in a variable
+				     * if it is empty continue on without a header image div 
+				     * 
+				     * Filter: deciduous_f_header_image_attributes
+				     * For setting custom attributes for the img tag
+				     * 
+				     * @link https://developer.wordpress.org/reference/functions/get_header_image_tag/
+				     */
+					if (  !empty( $deciduous_header_image = get_header_image_tag( 
+						apply_filters ( 'deciduous_f_header_image_attributes' , array() )
+					 ) ) ) : 
 				?>
+				
 				<div class="header-image">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo $deciduous_header_image; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<?php echo $deciduous_header_image; ?>
 					</a>
 				</div><!-- .header-image -->
 				<?php endif; // End header image check. ?>

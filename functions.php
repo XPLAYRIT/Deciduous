@@ -27,7 +27,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.5', '<' ) ) {
 /**
  * Registers action hook: deciduous_init 
  * 
- * @since 1.0
  */
 function deciduous_init() {
 	do_action('deciduous_init');
@@ -47,9 +46,8 @@ function deciduous_p_theme_setup() {
      * Used to set the width of images and content. Should be equal to the width the theme
      * is designed for, generally via the style.css stylesheet.
      *
-     * @since 1.0
      */
-    if ( !isset($content_width) ) {
+    if ( !isset( $content_width ) ) {
     	$content_width = 600;
     }
     
@@ -68,10 +66,11 @@ function deciduous_p_theme_setup() {
 		'width'                  => 960,
 		'height'                 => 240,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'deciduous_custom_header_style', // in library/extensions/header-extensions.php
+		'wp-head-callback'       => 'deciduous_p_custom_header_style', // in library/extensions/header-extensions.php
+		'header-text'            => false
 	) ) );
 
-    // Deciduous Theme Specific Support
+	
     add_theme_support( 'deciduous_s_author_info' );
     add_theme_support( 'deciduous_s_superfish' );
     add_theme_support( 'deciduous_s_customizer_layout' );
@@ -128,7 +127,7 @@ add_action('after_setup_theme', 'deciduous_p_theme_setup', 10);
 
 
 /**
- * Registers action hook: deciduous_child_init
+ * Registers action hook: deciduous_childtheme_init
  * 
  */
 function deciduous_do_childtheme_init() {
