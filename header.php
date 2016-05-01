@@ -73,7 +73,7 @@
 	
 	<div id="wrapper" class="hfeed site-wrapper">
 	
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'deciduous' ); ?></a>
+		<a class="skip-link screen-reader-text" tabindex="1" href="#content"><?php esc_html_e( 'Skip to content', 'deciduous' ); ?></a>
 
     	<?php
 			// Load the action hook: deciduous_a_before_header
