@@ -43,5 +43,5 @@ There are various ways you can contribute:
 
 1. Raise an [Issue](https://github.com/emhr/Deciduous/issues) on GitHub
 2. Send us a Pull Request with your bug fixes and/or new features
-3. Translate Deciduous into different languages. You can register for our [glotpress translation project](http://translate.d.eciduo.us/projects/deciduous) and start translating. [Contact us](http://d.eciduo.us/contact) if your language is missing  or if you want to become a validator for a language and we will set it up.
+3. Translate Deciduous into different languages. You can register for our [glotpress translation project](http://translate.d.eciduo.us/glotpress/projects/deciduous) by [contacting us](http://d.eciduo.us/contact) and we will set you up with a login to get you started translating.
 4. Provide feedback and suggestions on [enhancements](https://github.com/emhr/Deciduous/issues?direction=desc&labels=enhancement&page=1&sort=created&state=open)
