@@ -52,9 +52,10 @@ function deciduous_p_postfooter() {
     								'<a href="%s">',
     								apply_filters( 'the_permalink', get_permalink() ) 
     							), 
-    							'</a> '
+    							'</a>'
     						);
-
+			$postfooter .= ' ';
+			
     		if ( post_type_supports( $post_type, 'comments' ) ) {
             	$postfooter .= deciduous_postfooter_postconnect();
             }
