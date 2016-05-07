@@ -113,11 +113,11 @@ function deciduous_postfooter_posttax() {
     
     if ( isset( $post_type_tax ) && $post_type_tax ) { 
     	foreach ( $post_type_tax as $tax  )   {
-    		if ( $tax  == 'category' ) {
+    		if ( $tax  == 'category' && deciduous_categorized_blog() ) {
     			$post_tax_list .= deciduous_postfooter_postcategory();
     		} elseif ( $tax  == 'post_tag' ) {
     			$post_tax_list .= deciduous_postfooter_posttags();
-    		} else {
+    		} elseif ( $tax  != 'category' ) {
     			$post_tax_list .= deciduous_postfooter_postterms( $tax );
     		}
     	}
@@ -144,7 +144,7 @@ function deciduous_postfooter_postterms( $tax ) {
     
     if ( wp_get_object_terms( $post->ID, $tax ) ) {
     	$term_list = get_the_term_list( 0, $tax, '' , ', ', '' );		
-    	$tax_terms = '<span class="' . $tax . '-links">';
+    	$tax_terms = '<span class="' . $tax . '-links"> ';
     	
     	if ( strpos( $term_list, ',' ) ) {
     		$tax_terms .= $tax_obj->labels->name . ': ';
@@ -232,7 +232,11 @@ function deciduous_postfooter_posttags() {
         $posttags = get_the_tag_list( "<span class=\"tag-links\"> $tagtext ", ', ', '</span>. ' );
 	
 	} elseif ( is_single() ) {
-    	$tagtext = esc_html__( 'and tagged', 'deciduous' ) . ' ';
+		if ( deciduous_categorized_blog() ) {
+			$tagtext = esc_html__( 'and tagged', 'deciduous' ) . ' ';
+		} else {
+    		$tagtext = esc_html__( 'Tagged', 'deciduous' ) . ' ';
+        }
         
         $posttags = get_the_tag_list( "<span class=\"tag-links\"> $tagtext ", ', ', '</span>. ' );
 	

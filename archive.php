@@ -34,7 +34,7 @@
 		    			 * A Plugable function that creates the post title
 		    			 * Found in library/extensions/content-extensions.php
 		    			 */
-						deciduous_p_page_title();
+						deciduous_p_archive_title();
 						
 						/**
 						 * Only display vcard on author archives and on the first page 

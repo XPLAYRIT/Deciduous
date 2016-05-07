@@ -14,7 +14,7 @@
 			if( is_404() ) {
 				deciduous_p_postheader();
 			} elseif  (is_search() ) {
-				deciduous_p_page_title();
+				deciduous_p_archive_title();
 			}
 		?>
 		
