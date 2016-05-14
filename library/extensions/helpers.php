@@ -333,6 +333,25 @@ function deciduous_is_custom_post_type() {
  	return false;
 }
 
+
+/**
+ * Returns true if a a nav menu is set to the primary location
+ * or if the blog has published pages
+ *
+ * @return bool
+ */
+ function deciduous_has_menu( $menu_id ) {
+	if ( has_nav_menu( $menu_id ) ) {
+		return true;
+	}	
+	$page_count_obj = wp_count_posts( 'page' );
+		
+	if( $page_count_obj->publish > 0 ) {
+		return true;
+	}
+	return false;
+}
+
 /**
  * Props _s theme 
  *
@@ -378,6 +397,6 @@ function deciduous_category_transient_flusher() {
 	delete_transient( 'deciduous_categories' );
 }
 add_action( 'edit_category', 'deciduous_category_transient_flusher' );
-add_action( 'save_post',     'deciduous_category_transient_flusher' );
+add_action( 'save_post_post',     'deciduous_category_transient_flusher' );
 
 ?>

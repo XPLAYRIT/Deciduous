@@ -94,8 +94,14 @@
 			?>
 			
 			<?php 
-				// Load the template for the main navigation
-				locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+				/**
+				 * Test for Menus or published pages before including nav-access.php
+				 * deciduous_has_menu() is found in /library/extensions/helpers.php
+				 */ 
+				if( deciduous_has_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary' ) ) ) {
+					// Load the template for the main navigation
+					locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+				}
 				
 				// Load the action hook: deciduous_a_after_main_nav
 				deciduous_do_after_main_nav();

@@ -146,7 +146,7 @@ if ( ! function_exists( 'deciduous_p_register_navmenu' ) ) :
  */
 
 function deciduous_p_register_navmenu() {
-	register_nav_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary-menu' ), apply_filters( 'deciduous_f_primary_menu_name', esc_html__( 'Primary Menu', 'deciduous' ) ) );
+	register_nav_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary' ), apply_filters( 'deciduous_f_primary_menu_name', esc_html__( 'Primary Menu', 'deciduous' ) ) );
 }
 
 endif;
