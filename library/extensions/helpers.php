@@ -396,7 +396,7 @@ function deciduous_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'deciduous_categories' );
 }
-add_action( 'edit_category', 'deciduous_category_transient_flusher' );
+add_action( 'delete_category', 'deciduous_category_transient_flusher' );
 add_action( 'save_post_post',     'deciduous_category_transient_flusher' );
 
 ?>
