@@ -66,7 +66,7 @@ function deciduous_p_theme_setup() {
 		'width'                  => 960,
 		'height'                 => 240,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'deciduous_p_custom_header_style', // in library/extensions/header-extensions.php
+		'wp-head-callback'       => 'deciduous_p_custom_header_bodyclass', // in library/extensions/header-extensions.php
 		'header-text'            => false
 	) ) );
 
@@ -83,8 +83,6 @@ function deciduous_p_theme_setup() {
     require_once ( DECIDUOUS_LIB . '/extensions/actions.php' );
     
     require_once ( DECIDUOUS_LIB . '/extensions/helpers.php' );
-    
-    require_once ( DECIDUOUS_LIB . '/legacy/deprecated.php' );
 
     require_once ( DECIDUOUS_LIB . '/extensions/header-extensions.php' );
 

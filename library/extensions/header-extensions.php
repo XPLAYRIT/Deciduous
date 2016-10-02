@@ -25,129 +25,6 @@ function deciduous_html( $class_att = FALSE ) {
 }
 
 
-
-/**
- * Switch deciduous's SEO functions on or off
- * 
- * Provides compatibility with SEO plugins: All in One SEO Pack, HeadSpace, 
- * Platinum SEO Pack, wpSEO and Yoast SEO. Default: ON
- * 
- * Filter: deciduous_f_seo_switch
- */
-function deciduous_seo_switch() {
-	if ( class_exists( 'All_in_One_SEO_Pack' ) || class_exists( 'HeadSpace_Plugin' ) || class_exists( 'Platinum_SEO_Pack' ) || class_exists( 'wpSEO' ) || defined( 'WPSEO_VERSION' ) ) {
-		$content = false;
-	} else {
-		$content = true;
-	}
-		return apply_filters( 'deciduous_f_seo_switch', $content );
-}
-
-
-/**
- * Switch use of deciduous_the_excerpt() in the meta-tag description
- * 
- * Default: ON
- * 
- * Filter: deciduous_use_excerpt
- */
-function deciduous_use_excerpt() {
-    $display = TRUE;
-    $display = apply_filters( 'deciduous_f_use_excerpt', $display );
-    return $display;
-}
-
-
-/**
- * Switch use of deciduous_use_autoexcerpt() in the meta-tag description
- * 
- * Default: OFF
- * 
- * Filter: deciduous_use_autoexcerpt
- */
-function deciduous_use_autoexcerpt() {
-    $display = FALSE;
-    $display = apply_filters( 'deciduous_f_use_autoexcerpt', $display );
-    return $display;
-}
-
-	
-/**
- * Display the meta-tag description
- * 
- * This can be switched off by filtering either deciduous_seo or deciduous_show_description and returning FALSE
- * 
- * Filter: deciduous_f_meta_description_switch boolean filter to to output the meta description defaults to ON
- * Filter: deciduous_use_autoexcerpt  boolean filter to switch ON auto-excerpted descriptions defaults to OFF
- * Filter: deciduous_use_autoexcerpt  boolean filter to switch OFF auto-excerpted descriptions defaults to ON
- * Filter: deciduous_create_description
- */
-function deciduous_meta_description() {
-	if ( deciduous_seo_switch() ) {
-		$display = apply_filters( 'deciduous_f_meta_description_switch', $display = TRUE );
-		if ( $display ) {
-			$content = '';
-    		if ( is_single() || is_page() ) {
-      			if ( have_posts() ) {
-          			while ( have_posts() ) {
-            			the_post();
-						if ( deciduous_the_excerpt() == "" ) {
-							if ( apply_filters( 'deciduous_f_use_autoexcerpt', $display = FALSE ) ) {
-					    		$content = '<meta name="description" content="';
-                    			$content .= deciduous_excerpt_rss();
-                    			$content .= '" />';
-                    			$content .= "\n";
-							}
-						} else {
-							if ( apply_filters( 'deciduous_f_use_excerpt', $display = TRUE ) ) {
-                    			$content = '<meta name="description" content="';
-                    			$content .= deciduous_the_excerpt();
-                    			$content .= '" />';
-                    			$content .= "\n";
-                        	}
-                		}
-            		}
-        		}
-        	} elseif ( is_home() || is_front_page() ) {
-    			$content = '<meta name="description" content="';
-    			$content .= get_bloginfo( 'description', 'display' );
-    			$content .= '" />';
-    			$content .= "\n";
-        	}
-			echo apply_filters ( 'deciduous_f_meta_description', $content );
-		}
-	} // end deciduous_meta_description
-}
-
-
-/**
- * Create the robots meta-tag
- * 
- * This can be switched off by filtering either deciduous_seo or deciduous_show_robots and returning FALSE
- * 
- * Filter: deciduous_meta_robots_switch
- * Filter: deciduous_create_robots
- */
-function deciduous_meta_robots() {
-	global $paged;
-	if ( deciduous_seo_switch() && get_option( 'blog_public' ) ) {
-		$display = apply_filters( 'deciduous_f_meta_robots_switch', $display = TRUE );
-		if ( $display ) {
-    		if ( ( is_home() && ( $paged < 2 ) ) || is_front_page() || is_single() || is_page() || is_attachment() ) {
-				$content = '';
-    		} elseif ( is_search() ) {
-        		$content = '<meta name="robots" content="noindex,nofollow" />';
-    		} else {	
-        		$content = '<meta name="robots" content="noindex,follow" />';
-    		}
-    	$content .= "\n";
-    	echo apply_filters( 'deciduous_f_meta_robots', $content );
-    	}
-	}
-}// end deciduous_meta_robots
-
-
-
 /**
  * Display pingback link
  * 
@@ -236,29 +113,22 @@ function deciduous_create_stylesheet() {
 add_action('wp_enqueue_scripts','deciduous_create_stylesheet');
 
 
-if ( ! function_exists( 'deciduous_p_custom_header_style') ) :
+if ( ! function_exists( 'deciduous_p_custom_header_bodyclass') ) :
 /**
  * Pluggable Function for outputting header styles
  * into <head>
  *
- * This is the callback function for add_theme_support( 'custom-header') found in functions.php
+ * This is the callback function for add_theme_support( 'custom-header' ) found in functions.php
  */
-function deciduous_p_custom_header_style() {
-	if ( get_header_image() ) :
-?>
-<style type="text/css" id="deciduous-header-image-style">
-.branding {
-    padding-bottom: 2em;
-    padding-top: 3em;
+function deciduous_p_custom_header_bodyclass( $classes ) {
+	if ( get_header_image() ) {
+		$classes[] = "custom-header-image";
+	
+	}
+	return $classes;
 }
 
-.header-image {
-	margin-top: 1em;
-}
-</style>
-<?php
-	endif;
-}
+add_filter( 'body_class', 'deciduous_p_custom_header_bodyclass' );
 
 endif;
 

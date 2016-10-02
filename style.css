@@ -2,10 +2,10 @@
 THEME NAME: Deciduous
 THEME URI: http://d.eciduo.us
 DESCRIPTION: Deciduous is a highly extensible WordPress Theme featuring 5 widget areas, drop-down menus, several layout options, &amp; a whole lot more. It is fully responsive meaning it will adapt the layout to smaller screens seamlessly. Perfect for any blog and <strong><em>an awesome</em></strong> starting point for child theme development.
-VERSION: 0.9.0
+VERSION: 0.9.1
 AUTHOR: Gene Robinson
 AUTHOR URI: http://d.eciduo.us
-TAGS: white, three-columns, two-columns, responsive-layout, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats, translation-ready, full-width-template
+TAGS: white, three-columns, two-columns, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats, translation-ready, full-width-template
 Text Domain: deciduous
 Domain Path: /library/languages
 License: GNU General Public License v2.0
@@ -769,6 +769,15 @@ img.wp-smiley,
 .branding {
   padding-top: 6em;
   padding-bottom: 3.7em;
+}
+
+.custom-header-image .branding {
+    padding-bottom: 2em;
+    padding-top: 3em;
+}
+
+.custom-header-image .header-image {
+	margin-top: 1em;
 }
 
 .site-title {

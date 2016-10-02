@@ -319,9 +319,9 @@ function deciduous_comment_form_args( $post_id = null ) {
 
 		'must_log_in'          => '<p id="login-req">' .  sprintf( __('You must be %1$slogged in%2$s to post a comment.', 'deciduous'), sprintf('<a href="%s" title ="%s">', esc_attr( wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ), esc_attr__( 'Log in', 'deciduous' ) ), '</a>' ). '</p>',
 
-		'logged_in_as'         => '<p id="login"><span class="loggedin">' . sprintf( __('Logged in as %s', 'deciduous' ), sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'profile.php' ), $user_identity ) ) .'</span>. <span class="logout">' . sprintf('<a href="%s">%s</a>' , esc_attr( wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ), esc_html__('Log out?', 'deciduous' ) ) . '</span></p>',
+		'logged_in_as'         => '<p id="login"><span class="loggedin">' . sprintf( __( 'Logged in as %s', 'deciduous' ), sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'profile.php' ), $user_identity ) ) .'</span>. <span class="logout">' . sprintf('<a href="%s">%s</a>' , esc_attr( wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ), esc_html__( 'Log out?', 'deciduous' ) ) . '</span></p>',
 
-		'comment_notes_after'  => '<div id="form-allowed-tags" class="form-section"><p><span>' . sprintf( esc_html_x('You may use these %1$sHTML%2$s tags and attributes:', '%$1s and %$2s are <abbr> tags', 'deciduous'), '<abbr title="HyperText Markup Language">', '</abbr>' ) . '</span> <code>' . allowed_tags() . '</code></p></div>',
+		'comment_notes_after'  => '<div id="form-allowed-tags" class="form-section"><p><span>' . sprintf( esc_html_x('You may use these %1$sHTML%2$s tags and attributes:', '%$1s and %$2s are <abbr> tags', 'deciduous'), '<abbr title="'. __( 'HyperText Markup Language', 'deciduous' ) .'">', '</abbr>' ) . '</span> <code>' . allowed_tags() . '</code></p></div>',
 
 		'id_form'              => 'commentform',
 		'id_submit'            => 'submit',

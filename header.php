@@ -22,24 +22,7 @@
 
 <head>
 <meta charset="<?php echo ( get_bloginfo( 'charset' ) ) ?>" />
-<meta name="viewport" content="<?php echo apply_filters( 'deciduous_f_meta_viewport_content', 'width=device-width,initial-scale=1' ) ?>"/>
-
-<?php
-	/**
-	 * Output the meta tags for decription and robots
-	 *
-   	 * They are aware of most popular SEO plugins and will switch off
-   	 * if a SEO plugin is detected. Also can be switched off 
-	 * by returning FALSE to the filter: deciduous_f_seo_switch
-	 *
-	 * Found in /library/header-extensions.php
-   	 */
-
-	deciduous_meta_description();
-
-	deciduous_meta_robots();
-?>
-	
+<meta name="viewport" content="<?php echo apply_filters( 'deciduous_f_meta_viewport_content', 'width=device-width,initial-scale=1' ) ?>"/>	
 <link rel="profile" href="http://gmpg.org/xfn/11" />	
 
 <?php

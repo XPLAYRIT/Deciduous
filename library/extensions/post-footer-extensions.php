@@ -38,7 +38,7 @@ function deciduous_p_postfooter() {
     			/* translators: %s is custom post type singular name, wrapped in link tags */
     			$postfooter .= 	sprintf( 
 									esc_html__( 'Browse the %s archive.', 'deciduous' ), 
-    								' <a href="' . $post_type_archive_link . '">' . $post_type_obj->labels->singular_name . '</a> '
+    								' <a href="' . esc_url( $post_type_archive_link ) . '">' . $post_type_obj->labels->singular_name . '</a> '
     							);
         	}
         	
