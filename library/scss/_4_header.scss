@@ -16,6 +16,15 @@
 	padding-bottom: 3.7em;
 }
 
+.custom-header-image .branding {
+    padding-bottom: 2em;
+    padding-top: 3em;
+}
+
+.custom-header-image .header-image {
+	margin-top: 1em;
+}
+
 .site-title {
     font-family: $header-font;
     @include adjust-font-size-to(34px);

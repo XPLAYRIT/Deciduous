@@ -13,13 +13,13 @@ if( ! function_exists( 'deciduous_p_page_title' ) ):
  * Create the page title.
  * 
  * Echoes the title of the webpage for specific queries. The markup is conditionally set using template tags.
- * Located in templates: archive.php, attachement.php, author.php, category.php, search.php, tag.php
+ * Located in templates: archive.php, 
  * 
  * Filter: deciduous_page_title 
  * 
  * @todo review and remove possiblity for displaying an empty div for archive-meta
  */
-function deciduous_p_page_title() {
+function deciduous_p_archive_title() {
     global $post;
 
     $content = "\t\t\t\t";
@@ -36,7 +36,7 @@ function deciduous_p_page_title() {
     		$content .= ' <span>' . $author .'</span>';
     		$content .= '</h1>';
     } elseif ( is_category() ) {
-    		$content .= '<h1 class="page-title">';
+    		$content .= '<h1 class="page-title category">';
     		$content .= esc_html__( 'Category Archives:', 'deciduous' );
     		$content .= ' <span>' . single_cat_title( '', FALSE ) .'</span>';
     		$content .= '</h1>' . "\n";
@@ -83,6 +83,12 @@ function deciduous_p_page_title() {
     		$content .= '<h1 class="page-title">';
     		$content .= sprintf( esc_html__( 'Yearly Archives: %s', 'deciduous' ), '<span>' . get_the_time( 'Y' ) ) . '</span>';
     		$content .= '</h1>';
+    } else {
+      	    $content .= '<h1 class="page-title">';
+      	    $content .= get_the_archive_title();
+    		$content .= '</h1>';
+
+
     }
     $content .= "\n";
     echo apply_filters( 'deciduous_f_page_title', $content );

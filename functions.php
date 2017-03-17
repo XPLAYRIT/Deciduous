@@ -66,7 +66,7 @@ function deciduous_p_theme_setup() {
 		'width'                  => 960,
 		'height'                 => 240,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'deciduous_p_custom_header_style', // in library/extensions/header-extensions.php
+		'wp-head-callback'       => 'deciduous_p_custom_header_bodyclass', // in library/extensions/header-extensions.php
 		'header-text'            => false
 	) ) );
 
@@ -83,8 +83,6 @@ function deciduous_p_theme_setup() {
     require_once ( DECIDUOUS_LIB . '/extensions/actions.php' );
     
     require_once ( DECIDUOUS_LIB . '/extensions/helpers.php' );
-    
-    require_once ( DECIDUOUS_LIB . '/legacy/deprecated.php' );
 
     require_once ( DECIDUOUS_LIB . '/extensions/header-extensions.php' );
 
@@ -146,7 +144,7 @@ if ( ! function_exists( 'deciduous_p_register_navmenu' ) ) :
  */
 
 function deciduous_p_register_navmenu() {
-	register_nav_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary-menu' ), apply_filters( 'deciduous_f_primary_menu_name', esc_html__( 'Primary Menu', 'deciduous' ) ) );
+	register_nav_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary' ), apply_filters( 'deciduous_f_primary_menu_name', esc_html__( 'Primary Menu', 'deciduous' ) ) );
 }
 
 endif;

@@ -22,24 +22,7 @@
 
 <head>
 <meta charset="<?php echo ( get_bloginfo( 'charset' ) ) ?>" />
-<meta name="viewport" content="<?php echo apply_filters( 'deciduous_f_meta_viewport_content', 'width=device-width,initial-scale=1' ) ?>"/>
-
-<?php
-	/**
-	 * Output the meta tags for decription and robots
-	 *
-   	 * They are aware of most popular SEO plugins and will switch off
-   	 * if a SEO plugin is detected. Also can be switched off 
-	 * by returning FALSE to the filter: deciduous_f_seo_switch
-	 *
-	 * Found in /library/header-extensions.php
-   	 */
-
-	deciduous_meta_description();
-
-	deciduous_meta_robots();
-?>
-	
+<meta name="viewport" content="<?php echo apply_filters( 'deciduous_f_meta_viewport_content', 'width=device-width,initial-scale=1' ) ?>"/>	
 <link rel="profile" href="http://gmpg.org/xfn/11" />	
 
 <?php
@@ -73,7 +56,7 @@
 	
 	<div id="wrapper" class="hfeed site-wrapper">
 	
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'deciduous' ); ?></a>
+		<a class="skip-link screen-reader-text" tabindex="1" href="#content"><?php esc_html_e( 'Skip to content', 'deciduous' ); ?></a>
 
     	<?php
 			// Load the action hook: deciduous_a_before_header
@@ -94,8 +77,14 @@
 			?>
 			
 			<?php 
-				// Load the template for the main navigation
-				locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+				/**
+				 * Test for Menus or published pages before including nav-access.php
+				 * deciduous_has_menu() is found in /library/extensions/helpers.php
+				 */ 
+				if( deciduous_has_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary' ) ) ) {
+					// Load the template for the main navigation
+					locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+				}
 				
 				// Load the action hook: deciduous_a_after_main_nav
 				deciduous_do_after_main_nav();

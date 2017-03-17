@@ -6,14 +6,15 @@ When contributing please ensure you follow the guidelines below so that we can k
 
 __Please Note:__ GitHub is for bug reports and contributions only - if you have a support question don't post here, use the WordPress support forums instead.
 
-## Getting Started
+## GitHub Contribuutions
+### Getting Started
 
 * Submit a ticket for your issue, assuming one does not already exist.
 * Raise it on our [Issue Tracker](https://github.com/emhr/Deciduous/issues)
 * Clearly describe the issue including steps to reproduce the bug.
 * Make sure you fill in the earliest version that you know has the issue as well as the version of WordPress you're using.
 
-## Making Changes
+### Making Changes
 
 * Fork the repository on GitHub
 * Make the changes to your forked repository
@@ -23,7 +24,7 @@ __Please Note:__ GitHub is for bug reports and contributions only - if you have 
 * If possible, and if applicable, please also add/update unit tests for your changes
 * Push the changes to your fork and submit a pull request to the 'master' branch of the Deciduous repository
 
-## Code Documentation
+### Code Documentation
 
 * We try to ensure that every function is documented well and follows the standards set by phpDoc
 * An example function can be found [here](https://gist.github.com/sunnyratilal/5308969)
@@ -31,7 +32,11 @@ __Please Note:__ GitHub is for bug reports and contributions only - if you have 
 
 At this point you're waiting on us to merge your pull request. We'll review all pull requests, and make suggestions and changes if necessary.
 
-# Additional Resources
+## Localizations
+
+Help us ranslate Deciduous into different languages. You can register for our [glotpress translation project](http://translate.d.eciduo.us/glotpress/projects/deciduous) by [contacting us](http://d.eciduo.us/contact) and we will set you up with a login to get you started translating.
+
+## Additional Resources
 
 * [General GitHub Documentation](http://help.github.com/)
 * [GitHub Pull Request documentation](http://help.github.com/send-pull-requests/)
