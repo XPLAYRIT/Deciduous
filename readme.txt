@@ -1,9 +1,9 @@
 === Deciduous ===
 Contributors: Gene Robinson(emhr)
 Tags:  three-columns, two-columns, responsive-layout, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats, translation-ready, full-width-template
-Requires at least: 3.5
-Tested up to: 4.5.1
-Stable tag: 0.9.1
+Requires at least: 4.7
+Tested up to: 4.7.3
+Stable tag: 0.9.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
