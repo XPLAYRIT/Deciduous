@@ -32,15 +32,15 @@
 				     * @link https://developer.wordpress.org/reference/functions/get_header_image_tag/
 				     */
 				    if( is_customize_preview() ) {
-						$deciduous_header_image_attributes =	array('srcset' => ' ' );
+						$deciduous_header_image_attributes =	array( 'srcset' => ' ' );
 					} else {
 						$deciduous_header_image_attributes =	array();
 					}
 					
 					// Begin header image check
-					if (  !empty( $deciduous_header_image = get_header_image_tag( 
-						apply_filters ( 'deciduous_f_header_image_attributes' , $deciduous_header_image_attributes )
-					 ) ) ) : 
+					$deciduous_header_image = get_header_image_tag( apply_filters( 'deciduous_f_header_image_attributes' , $deciduous_header_image_attributes ) );
+
+					if ( !empty( $deciduous_header_image ) ) : 
 				?>
 				
 				<div class="header-image">
