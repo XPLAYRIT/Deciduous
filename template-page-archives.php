@@ -55,7 +55,7 @@
 								the_content();
 								edit_post_link( __( 'Edit', 'deciduous' ),'<span class="edit-link">','</span>' );
 								// Loading the archives template part
-								locate_template( array( 'template-parts/content/content-archives.php') , true );
+								get_template_part( 'template-parts/content/content' , 'archives' );
 							?>
 
 						</div><!-- .entry-content -->

@@ -72,7 +72,7 @@ if( have_posts() ) :
 	
 else:
 	
-	locate_template( array( 'template-parts/content/content-none.php' ), true );
+	get_template_part( 'template-parts/content/content' , 'none' );
 
 endif; 
 ?>

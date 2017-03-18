@@ -42,11 +42,11 @@
 						 */
 						if ( is_author() && current_theme_supports( 'deciduous_s_author_info' ) && !is_paged() && deciduous_get_theme_opt( 'author_info' ) == 1 ) {
 							// load the author vcard template
-							locate_template( array( 'template-parts/content/content-author.php' ) ,true );	
+							get_template_part( 'template-parts/content/content' , 'author' );	
 						}
 
 						if ( current_theme_supports( 'deciduous_s_nav_before_content' ) ) {
-							locate_template( array( 'template-parts/navigation/nav-content-before.php' ), true );
+							get_template_part( 'template-parts/navigation/nav-content' , 'before' );
 						}
 
 						/**
@@ -58,7 +58,7 @@
 						 */
 						deciduous_do_before_x_loop();
 
-						locate_template( array( 'template-parts/content/loop.php' ) ,true );
+						get_template_part( 'template-parts/content/content' , 'loop' );
 
 						/**
 						 * Load action hook: deciduous_a_after_x_loop where x = the type of template hierarchy view
@@ -70,7 +70,7 @@
 						deciduous_do_after_x_loop();
 
 						if ( current_theme_supports( 'deciduous_s_nav_after_content' ) ) {
-							locate_template( array( 'template-parts/navigation/nav-content-after.php' ), true );
+							get_template_part( 'template-parts/navigation/nav-content', 'after' );
 						}
 					?>
 

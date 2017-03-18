@@ -2,7 +2,7 @@
 /**
  * Deciduous backwards compatibility functionality
  *
- * Prevents Deciduous from running on WordPress versions prior to 4.5
+ * Prevents Deciduous from running on WordPress versions prior to 4.7
  *
  * @package DeciduousLibrary
  * @subpackage BackwardsCompatibility
@@ -26,12 +26,12 @@ add_action( 'after_switch_theme', 'deciduous_switch_theme' );
  * Add message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
- * deciduous on WordPress versions prior to 4.5.
+ * deciduous on WordPress versions prior to 4.7.
  *
  *
  * @return void
  */
 function deciduous_upgrade_notice() {
-	$message = sprintf( esc_html_x( 'Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again.', '%1s and %2s represent a version number', 'deciduous' ), '4.5', $GLOBALS['wp_version'] );
+	$message = sprintf( esc_html_x( 'Deciduous requires at least WordPress version %1s. You are running version %2s. Please upgrade and try again.', '%1s and %2s represent a version number', 'deciduous' ), '4.7', $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }

@@ -70,7 +70,7 @@
 				deciduous_do_before_branding();
  
 				// Load the template for the site branding
-				locate_template( array( 'template-parts/branding/branding.php' ), true );
+				get_template_part( 'template-parts/header/branding');
 
 				// Load the action hook: deciduous_a_after_branding
 				deciduous_do_after_branding();
@@ -83,7 +83,7 @@
 				 */ 
 				if( deciduous_has_menu( apply_filters( 'deciduous_f_primary_menu_id', 'primary' ) ) ) {
 					// Load the template for the main navigation
-					locate_template( array( 'template-parts/navigation/nav-access.php' ), true );
+					get_template_part( 'template-parts/navigation/nav' , 'access' );
 				}
 				
 				// Load the action hook: deciduous_a_after_main_nav

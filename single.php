@@ -29,17 +29,17 @@
 					<?php 
 						while ( have_posts() ) : the_post();
 							if ( current_theme_supports( 'deciduous_s_nav_before_content' ) ) {
-								locate_template( array( 'template-parts/navigation/nav-content-before.php' ), true );
+								get_template_part( 'template-parts/navigation/nav-content' , 'before' );
 							}
 		
 							if ( is_attachment() ) {
-								locate_template( array( 'template-parts/content/content-attachment.php') , true );
+								get_template_part( 'template-parts/content/content' , 'attachment' );
 							} else {
-								locate_template( array( 'template-parts/content/content-single.php') , true  );
+								get_template_part( 'template-parts/content/content' , 'single'  );
 							}
 		
 							if ( current_theme_supports( 'deciduous_s_nav_after_content' ) ) {
-								locate_template( array( 'template-parts/navigation/nav-content-after.php' ) , true );
+								get_template_part( 'template-parts/navigation/nav-content' , 'after' );
 							}
 
 							// If comments are open or we have at least one comment, load up the comment template.

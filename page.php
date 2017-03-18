@@ -32,7 +32,7 @@
 					 * actions: deciduous_a_before_post deciduous_a_after_post
 					 * as well as the comments template
 					 */
-					locate_template( array( 'template-parts/content/content-page.php'), true );
+					get_template_part( 'template-parts/content/content' , 'page' );
 				?>
 
 				</div><!-- #content -->
