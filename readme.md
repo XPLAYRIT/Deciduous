@@ -3,7 +3,7 @@ Contributors: Gene Robinson(emhr),
 Thanks and Credits for Thematic and it's lead devs: iandstewart, chrisgossmann, emhr, middlesister without whose contributions this theme would not be possible.
 WordPress version requirement: 4.7
 Tested with WordPress version: 4.7.3
-Current Stable tag: 0.9.2
+Current Stable tag: 0.9.3
 
 ### Description
 

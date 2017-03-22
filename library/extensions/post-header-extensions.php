@@ -91,7 +91,7 @@ function deciduous_p_archive_title() {
 
     }
     $content .= "\n";
-    echo apply_filters( 'deciduous_f_page_title', $content );
+    echo apply_filters( 'deciduous_f_archive_title', $content );
 }
 
 endif;

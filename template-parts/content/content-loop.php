@@ -24,7 +24,7 @@ if( have_posts() ) :
 		    	 			 * A Plugable function that creates the page title
 		    	 			 * Found in library/extensions/content-extensions.php
 		    				 */
-        					deciduous_p_page_title();
+        					deciduous_p_archive_title();
         				} else {
 							/** 
 		    	 			 * A Plugable function that creates the post header
